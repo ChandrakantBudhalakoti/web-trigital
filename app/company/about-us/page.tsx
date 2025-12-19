@@ -12,116 +12,99 @@ export const metadata = {
 export default function AboutUs() {
   return (
     <>
+      {/* HERO */}
       <HeroSection
         title="About Trigital"
-        subtitle="Established in 2013, we've been empowering businesses with innovative digital solutions."
-        backgroundClass="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900"
+        subtitle="Empowering organizations since 2013 with innovative digital solutions."
+        backgroundClass="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 py-32 md:py-44"
       />
 
+      {/* MISSION VISION */}
       <Section
         id="mission"
-        className="bg-white dark:bg-slate-800"
+        className="bg-white dark:bg-slate-900 py-20"
         title="Our Mission & Vision"
       >
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="card bg-base-100 shadow-md">
-            <div className="card-body">
-              <h3 className="card-title">Mission</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                To provide the most responsive, functional, and innovative technology solutions
-                that help businesses achieve their digital transformation goals while maintaining
-                the highest standards of quality and customer service.
-              </p>
-            </div>
+        <div className="grid md:grid-cols-2 gap-10">
+          <div className="bg-base-100 p-8 rounded-xl shadow-lg border border-white/10">
+            <h3 className="text-xl font-bold mb-3 text-primary">Mission</h3>
+            <p className="text-base-content/70 leading-relaxed">
+              Provide the most responsive, functional, and innovative technology solutions
+              helping businesses accelerate their transformation journey.
+            </p>
           </div>
-          <div className="card bg-base-100 shadow-md">
-            <div className="card-body">
-              <h3 className="card-title">Vision</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                To be a global leader in providing resilient, top-notch, and value-based
-                technology solutions that empower organizations to thrive in an ever-changing
-                digital landscape.
-              </p>
-            </div>
+
+          <div className="bg-base-100 p-8 rounded-xl shadow-lg border border-white/10">
+            <h3 className="text-xl font-bold mb-3 text-primary">Vision</h3>
+            <p className="text-base-content/70 leading-relaxed">
+              Become a global leader delivering scalable, secure, and value-driven digital
+              platforms to power growth.
+            </p>
           </div>
         </div>
       </Section>
 
+      {/* CORE VALUES */}
       <Section
         id="values"
-        className="bg-gray-50 dark:bg-slate-900"
+        className="bg-gray-50 dark:bg-slate-800 py-20"
         title="Our Core Values"
       >
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {[
-            {
-              title: 'Excellence',
-              description: 'We strive for excellence in all that we do, delivering quality solutions consistently.',
-            },
-            {
-              title: 'Courage',
-              description:
-                'We are courageous and take pride in our commitment and ownership of our actions and results.',
-            },
-            {
-              title: 'People First',
-              description: 'We love people, care deeply, and spread kindness and goodwill to all.',
-            },
-            {
-              title: 'Continuous Learning',
-              description:
-                'We believe in humility and continuous learning as bedrock principles of success.',
-            },
-            {
-              title: 'Collaboration',
-              description: 'When people work together, they create something greater than themselves.',
-            },
-            {
-              title: 'Innovation',
-              description: 'We push boundaries, challenge conventions, and pursue innovation in everything we do.',
-            },
+            'Excellence',
+            'Courage',
+            'People First',
+            'Continuous Learning',
+            'Collaboration',
+            'Innovation',
           ].map((value, idx) => (
-            <div key={idx} className="card bg-base-100 shadow-md">
-              <div className="card-body">
-                <h4 className="card-title text-lg">{value.title}</h4>
-                <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
-              </div>
+            <div
+              key={idx}
+              className="p-8 bg-base-100 rounded-xl shadow-lg border border-white/10 hover:shadow-xl transition"
+            >
+              <h4 className="font-bold text-lg text-primary mb-2">{value}</h4>
+              <p className="text-base-content/70">
+                {value === 'Excellence'
+                  ? 'Delivering outstanding solutions consistently.'
+                  : value === 'Courage'
+                  ? 'Taking bold action with ownership.'
+                  : value === 'People First'
+                  ? 'Empathy and meaningful experiences.'
+                  : value === 'Continuous Learning'
+                  ? 'Grow continuously with curiosity.'
+                  : value === 'Collaboration'
+                  ? 'Work together to create exponential impact.'
+                  : 'Push boundaries through creativity.'}
+              </p>
             </div>
           ))}
         </div>
       </Section>
 
+      {/* TEAM SECTION */}
       <Section
         id="team"
-        className="bg-white dark:bg-slate-800"
+        className="bg-white dark:bg-slate-900 py-20"
         title="Our Team"
         subtitle="Meet the brilliant minds driving our success"
       >
-        <div className="prose prose-lg max-w-3xl mx-auto dark:prose-invert">
+        <div className="max-w-3xl mx-auto prose dark:prose-invert text-center">
           <p>
-            Each member of our team embodies a unique blend of creativity, expertise, and
-            dedication. With a shared vision and relentless determination, we push boundaries,
-            challenge conventions, and pursue excellence in everything we do.
+            Each member brings expertise, creativity, and relentless drive to help businesses
+            succeed. Our culture nurtures innovation, collaboration, and excellence.
           </p>
           <p>
-            Our talented workforce of qualified professionals boosts innovation, creative
-            thinking, and experimentation that gives Trigital an edge over competitors. We foster
-            an environment of collaboration and innovation, where creativity is valued and
-            excellence is the standard.
-          </p>
-          <p>
-            Since our inception, customer satisfaction has been the best of our priorities. We
-            work as an extension of your team, ensuring your success is our success.
+            Customer success is our priority—we act as an extension of your team ensuring
+            meaningful transformation.
           </p>
         </div>
       </Section>
 
-      <Section
-        id="experience"
-        className="bg-gray-50 dark:bg-slate-900"
-        title="Our Experience"
-      >
-        <div className="grid md:grid-cols-2 gap-8">
+      {/* EXPERIENCE */}
+      <Section id="experience" className="bg-gray-50 dark:bg-slate-800 py-20" title="Our Experience">
+        <div className="grid md:grid-cols-2 gap-10">
+
           <div>
             <h3 className="text-2xl font-bold mb-4">Sectors We Serve</h3>
             <ul className="space-y-3">
@@ -130,18 +113,19 @@ export default function AboutUs() {
                 'Media & Entertainment',
                 'Telecommunications',
                 'Utilities & Essential Services',
-                'Professional Services',
                 'Financial Services',
                 'Healthcare',
                 'Education & E-Learning',
+                'Government & Public Sector',
               ].map((sector, idx) => (
                 <li key={idx} className="flex items-center gap-3">
-                  <CheckIcon className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-gray-300">{sector}</span>
+                  <CheckIcon className="w-5 h-5 text-primary" />
+                  <span className="text-base-content/80">{sector}</span>
                 </li>
               ))}
             </ul>
           </div>
+
           <div>
             <h3 className="text-2xl font-bold mb-4">Our Specialties</h3>
             <ul className="space-y-3">
@@ -149,29 +133,36 @@ export default function AboutUs() {
                 'Revenue Management & Assurance',
                 'Subscription Billing & CRM',
                 'IoT & M2M Metering',
-                'Cloud Solutions (IaaS, PaaS, SaaS)',
+                'Cloud Platforms & Architecture',
                 'Data Migration & Integration',
-                'AI & Machine Learning',
-                'Big Data Analytics',
-                'Digital Transformation',
+                'AI & Machine Learning Automation',
+                'Big Data Processing',
+                'End-to-End Digital Transformation',
               ].map((specialty, idx) => (
                 <li key={idx} className="flex items-center gap-3">
-                  <CheckIcon className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-gray-300">{specialty}</span>
+                  <CheckIcon className="w-5 h-5 text-primary" />
+                  <span className="text-base-content/80">{specialty}</span>
                 </li>
               ))}
             </ul>
           </div>
+
         </div>
       </Section>
 
-      <Section id="cta" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      {/* CTA */}
+      <Section id="cta" className="bg-gradient-to-tr from-blue-600 to-blue-800 text-white py-24">
         <div className="text-center">
-          <h2 className="text-4xl font-bold mb-4">Join Our Success Story</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Partner with Trigital and experience the difference innovative technology can make.
+          <h2 className="text-4xl font-bold mb-6">Join Our Success Story</h2>
+          <p className="text-lg max-w-xl mx-auto mb-10 opacity-90">
+            Partner with Trigital and experience scalable, secure and future-ready solutions.
           </p>
-          <Link href="/contact-us" className="btn btn-light btn-lg">
+
+          <Link
+            href="/contact-us"
+            className="px-10 py-3 rounded-xl border border-primary text-primary text-lg
+                  hover:bg-primary hover:text-white hover:-translate-y-1 transition-all font-semibold"
+          >
             Get in Touch
           </Link>
         </div>

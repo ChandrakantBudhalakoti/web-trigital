@@ -1,26 +1,30 @@
-import Section from '@/components/Section';
+import Section from "@/components/Section";
 
 export default function HowItWorks() {
   const steps = [
     {
-      number: '1',
-      title: 'Connect Your Systems',
-      description: 'Link your existing applications, databases, and tools to Nipige in minutes',
+      number: "1",
+      title: "Connect Your Systems",
+      description:
+        "Link your existing applications, databases, and tools to Nipige in minutes",
     },
     {
-      number: '2',
-      title: 'Configure Workflows',
-      description: 'Design automated workflows that match your business processes',
+      number: "2",
+      title: "Configure Workflows",
+      description:
+        "Design automated workflows that match your business processes",
     },
     {
-      number: '3',
-      title: 'Enable Collaboration',
-      description: 'Let your teams collaborate seamlessly with real-time updates',
+      number: "3",
+      title: "Enable Collaboration",
+      description:
+        "Let your teams collaborate seamlessly with real-time updates",
     },
     {
-      number: '4',
-      title: 'Monitor & Optimize',
-      description: 'Track performance with advanced analytics and continuously optimize',
+      number: "4",
+      title: "Monitor & Optimize",
+      description:
+        "Track performance with advanced analytics and continuously optimize",
     },
   ];
 
@@ -29,7 +33,9 @@ export default function HowItWorks() {
       <Section>
         <div className="space-y-12">
           <div className="text-center space-y-4">
-            <h1 className="text-5xl font-bold text-primary">How Nipige Works</h1>
+            <h1 className="text-5xl font-bold text-primary">
+              How Nipige Works
+            </h1>
             <p className="text-xl text-base-content/70 max-w-2xl mx-auto">
               Simple steps to transform your digital operations
             </p>
@@ -44,8 +50,12 @@ export default function HowItWorks() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-primary mb-2">{step.title}</h3>
-                  <p className="text-base-content/70 text-lg">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-primary mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-base-content/70 text-lg">
+                    {step.description}
+                  </p>
                 </div>
                 {index < steps.length - 1 && (
                   <div className="absolute left-8 w-1 h-20 bg-primary/20 -ml-16 mt-20" />
@@ -58,39 +68,61 @@ export default function HowItWorks() {
             <h2 className="text-3xl font-bold text-primary">Key Components</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-bold text-lg text-primary mb-2">Integration Hub</h3>
+                <h3 className="font-bold text-lg text-primary mb-2">
+                  Integration Hub
+                </h3>
                 <p className="text-base-content/70">
-                  Connects to 100+ applications with pre-built connectors and custom API support
+                  Connects to 100+ applications with pre-built connectors and
+                  custom API support
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-primary mb-2">Workflow Engine</h3>
+                <h3 className="font-bold text-lg text-primary mb-2">
+                  Workflow Engine
+                </h3>
                 <p className="text-base-content/70">
                   Powerful automation engine with drag-and-drop workflow builder
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-primary mb-2">Analytics Dashboard</h3>
+                <h3 className="font-bold text-lg text-primary mb-2">
+                  Analytics Dashboard
+                </h3>
                 <p className="text-base-content/70">
                   Real-time insights with customizable dashboards and reports
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-primary mb-2">Collaboration Suite</h3>
+                <h3 className="font-bold text-lg text-primary mb-2">
+                  Collaboration Suite
+                </h3>
                 <p className="text-base-content/70">
-                  Built-in messaging, task management, and team collaboration tools
+                  Built-in messaging, task management, and team collaboration
+                  tools
                 </p>
               </div>
             </div>
           </div>
 
           <div className="text-center space-y-6">
-            <h2 className="text-2xl font-bold text-primary">Ready to Get Started?</h2>
+            <h2 className="text-2xl font-bold text-primary">
+              Ready to Get Started?
+            </h2>
             <div className="flex gap-4 justify-center flex-wrap">
-              <a href="/platform/key-features" className="btn btn-outline btn-primary">
+              <a
+                href="/platform/key-features"
+                className="px-10 py-3 rounded-xl border border-primary text-primary
+                  hover:bg-primary hover:text-white hover:-translate-y-1
+                  transition-all duration-300 flex items-center gap-2"
+              >
                 Explore Features
               </a>
-              <a href="/demo" className="btn btn-primary">
+              <a
+                href="/demo"
+                className="px-10 py-3 rounded-xl border border-primary text-primary
+                  hover:bg-primary hover:text-white hover:-translate-y-1
+                  transition-all duration-300 flex items-center gap-2"
+              >
                 See Demo
               </a>
             </div>
