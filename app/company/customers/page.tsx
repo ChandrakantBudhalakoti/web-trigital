@@ -1,6 +1,6 @@
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
-import TestimonialCard from '@/components/TestimonialCard';
+import TestimonialCarousel from "@/components/TestimonialCard";
 import Link from 'next/link';
 
 export const metadata = {
@@ -142,11 +142,7 @@ export default function Customers() {
         title="Customer Testimonials"
         subtitle="What our clients say about working with us"
       >
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, idx) => (
-            <TestimonialCard key={idx} {...testimonial} />
-          ))}
-        </div>
+        <TestimonialCarousel testimonials={testimonials} />
       </Section>
 
       <Section id="cta" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
