@@ -1,134 +1,196 @@
-import Section from "@/components/Section";
-import {
-  CloudIcon,
-  ServerIcon,
-  ArrowsRightLeftIcon,
-  ShieldCheckIcon,
-  CheckCircleIcon,
-} from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Deployment Model | Trigital Tech",
+  description:
+    "NIPIGE deployment options: SaaS, on-premise, and private cloud. Choose the infrastructure that fits your security, compliance, and scalability needs.",
+};
 
 export default function DeploymentModel() {
-  const models = [
+  const deployments = [
     {
-      name: "Cloud Deployment",
-      description: "Fully managed cloud platform",
-      benefits: [
-        "Zero infrastructure management",
-        "Auto-scaling",
-        "Always up-to-date",
+      title: "SaaS",
+      paragraphs: [
+        "Selecting the Software as a Service (SaaS) deployment model for a subscription billing platform brings significant advantages. It minimizes upfront infrastructure costs, as the service provider manages hosting and maintenance. This cost-effectiveness is crucial for businesses aiming to allocate resources efficiently.",
+        "SaaS also offers scalability, accommodating fluctuating workloads and business growth. Accessibility is enhanced, enabling users to access the platform from anywhere with an internet connection. Automatic updates and patches ensure continuous access to the latest features and security measures, reducing the burden on internal IT teams. Overall, SaaS streamlines implementation, allowing businesses to focus on core operations and customer service.",
       ],
-      icon: CloudIcon,
+      image: "/assets/images/Nipige/SaaS.svg",
     },
     {
-      name: "Hybrid Deployment",
-      description: "Mix of cloud + on-premise infrastructure",
-      benefits: [
-        "Flexibility",
-        "Cost optimization",
-        "Data sovereignty",
+      title: "On-Premise",
+      paragraphs: [
+        "Opting for the on-premise deployment model for a subscription billing platform provides businesses with heightened control and security over their data. This model allows organizations to host the billing system within their own infrastructure, ensuring compliance with specific regulatory requirements and data privacy standards.",
+        "On-premise is particularly beneficial for industries with stringent security protocols or those handling sensitive customer information. On-premise deployment grants businesses the autonomy to customize and configure the system to meet unique needs. While it may involve higher upfront costs and increased responsibility for maintenance, this model offers a tailored solution with direct oversight, critical for businesses prioritizing data control and regulatory adherence.",
       ],
-      icon: ArrowsRightLeftIcon,
+      image: "/assets/images/Nipige/On-Premise.svg",
     },
     {
-      name: "Enterprise Deployment",
-      description: "Private cloud or self-hosted on-premise",
-      benefits: [
-        "Full control",
-        "Custom configurations",
-        "Legacy integration",
+      title: "Private Cloud",
+      paragraphs: [
+        "Opting for the private cloud deployment model for a subscription billing platform combines the advantages of cloud technology with enhanced control and security. This approach leverages dedicated cloud resources, ensuring a scalable and flexible infrastructure tailored to the business’s specific needs.",
+        "Private cloud solutions provide robust security measures, making them suitable for industries with strict compliance requirements and data privacy concerns. This deployment model allows businesses to enjoy the efficiency of cloud computing while maintaining a higher degree of control over their environment. It is an ideal choice for organizations seeking a balance between scalability, customization, and heightened data security in their subscription billing operations.",
       ],
-      icon: ServerIcon,
+      image: "/assets/images/Nipige/Private_Cloud.svg",
     },
   ];
 
+  const whyNipige = [
+    { title: "Quick Setup", desc: "Deploy in days, not months" },
+    { title: "Cost Efficient", desc: "Pay for what you use" },
+    { title: "Secure", desc: "Enterprise-grade protection" },
+    { title: "Reliable", desc: "99.99% uptime SLA" },
+  ];
+
   return (
-    <main className="min-h-screen bg-base-200">
-      <Section>
-        <div className="space-y-20 py-16">
-
-          {/* HEADER */}
-          <div className="text-center space-y-5">
-            <h1 className="text-6xl font-extrabold text-primary">
-              Deployment Models
-            </h1>
-            <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
-              Choose the deployment option that works best for your organization
-            </p>
+    <main className="min-h-screen">
+      {/* —————————————————————————————————————————————————————————————
+          1. HERO SECTION — Full-width dark blue/indigo, title + description left, image right
+          ————————————————————————————————————————————————————————————— */}
+      <section className="w-full bg-gradient-to-r from-indigo-900 via-blue-900 to-indigo-800 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">
+                Deployment Models
+              </h1>
+              <p className="text-gray-200 mt-4 max-w-xl leading-relaxed">
+                Nipige provides businesses with a flexible deployment approach,
+                supporting SaaS, on-premise, and private cloud options. This
+                adaptability empowers businesses to choose the infrastructure
+                that aligns perfectly with their preferences and specific
+                requirements.
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <div className="relative w-full max-w-lg aspect-[4/3]">
+                <Image
+                  src="/assets/images/Nipige/deploymentModelTopBanner.png"
+                  alt="Deployment models"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* MODEL CARDS */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {models.map(({ name, description, benefits, icon: Icon }) => (
-              <div
-                key={name}
-                className="
-                  rounded-xl bg-base-100 border border-base-300 p-8
-                  hover:border-primary hover:shadow-xl hover:-translate-y-1
-                  transition-all duration-300 space-y-4
-                "
-              >
-                <Icon className="w-12 h-12 text-primary" />
+      {/* —————————————————————————————————————————————————————————————
+          2. DEPLOYMENT SECTIONS — SaaS (image left), On-Premise (text left), Private Cloud (image left)
+          ————————————————————————————————————————————————————————————— */}
+      {deployments.map(({ title, paragraphs, image }, index) => {
+        const imageLeft = index % 2 === 0;
+        const bgClass =
+          index === 0
+            ? "bg-white dark:bg-slate-900/30"
+            : index === 1
+              ? "bg-[#EBF7FF] dark:bg-slate-800/40"
+              : "bg-white dark:bg-slate-900/30";
 
-                <h3 className="text-2xl font-bold text-primary">{name}</h3>
+        return (
+          <section key={title} className={`w-full py-20 ${bgClass}`}>
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                {imageLeft ? (
+                  <>
+                    <div className="relative w-full aspect-[4/3] min-h-[240px] order-2 md:order-1">
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        className="rounded-2xl shadow-md w-full object-contain"
+                      />
+                    </div>
+                    <div className="order-1 md:order-2 space-y-4">
+                      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">
+                        {title}
+                      </h2>
+                      {paragraphs.map((p, i) => (
+                        <p
+                          key={i}
+                          className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed"
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="space-y-4">
+                      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">
+                        {title}
+                      </h2>
+                      {paragraphs.map((p, i) => (
+                        <p
+                          key={i}
+                          className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed"
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                    <div className="relative w-full aspect-[4/3] min-h-[240px] mt-8 md:mt-0">
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        className="rounded-2xl shadow-md w-full object-contain"
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
-                <p className="text-base-content/70">{description}</p>
-
-                <ul className="space-y-2 pt-2">
-                  {benefits.map((b) => (
-                    <li key={b} className="text-base-content flex items-center gap-2">
-                      <CheckCircleIcon className="w-5 h-5 text-primary" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+      {/* —————————————————————————————————————————————————————————————
+          3. WHY NIPIGE DEPLOYMENT
+          ————————————————————————————————————————————————————————————— */}
+      <section className="w-full py-20 bg-[#EBF7FF] dark:bg-slate-800/40">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 text-center mb-12">
+            Why Nipige Deployment?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {whyNipige.map(({ title, desc }) => (
+              <div key={title} className="space-y-3">
+                <p className="font-semibold text-gray-800 dark:text-gray-200 text-lg">
+                  {title}
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 text-sm">
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
-
-          {/* COMPARISON */}
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-10 shadow-xl">
-            <h2 className="text-3xl font-bold text-primary text-center mb-10">
-              Why Nipige Deployment?
-            </h2>
-
-            <div className="grid md:grid-cols-4 gap-10 text-center">
-              {[
-                { title: "Quick Setup", desc: "Deploy in days, not months" },
-                { title: "Cost Efficient", desc: "Pay for what you use" },
-                { title: "Secure", desc: "Enterprise-grade protection" },
-                { title: "Reliable", desc: "99.99% uptime SLA" },
-              ].map(({ title, desc }) => (
-                <div key={title} className="space-y-3">
-                  <ShieldCheckIcon className="w-10 h-10 text-primary mx-auto opacity-80" />
-                  <p className="font-bold text-primary">{title}</p>
-                  <p className="text-base-content/70 text-sm">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center space-y-6">
-            <h2 className="text-3xl font-bold text-primary">
-              Need Help Choosing?
-            </h2>
-            <p className="text-base-content/70 max-w-2xl mx-auto">
-              Our team can help recommend the best deployment path for your business.
-            </p>
-
-            <a
-              href="/contact-us"
-              className="
-                px-10 py-3 rounded-xl bg-primary text-white font-semibold
-                shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300
-              "
-            >
-              Schedule Consultation
-            </a>
-          </div>
-
         </div>
-      </Section>
+      </section>
+
+      {/* —————————————————————————————————————————————————————————————
+          4. CTA SECTION
+          ————————————————————————————————————————————————————————————— */}
+      <section className="w-full py-20 bg-white dark:bg-slate-900/30">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+            Need Help Choosing?
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            Our team can help recommend the best deployment path for your
+            business.
+          </p>
+          <Link
+            href="/contact-us"
+            className="inline-block px-10 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            Schedule Consultation
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

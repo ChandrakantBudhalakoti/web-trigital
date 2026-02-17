@@ -1,0 +1,87 @@
+# Trigital Technologies Website
+
+## About
+Trigital Technologies is a leading SaaS-based software development company providing custom software, cloud consulting, AI/ML solutions, and digital transformation services.
+
+## Website Structure
+
+### Main Pages
+- Home: https://trigital.in/
+- Contact Us: https://trigital.in/contact-us
+- FAQs: https://trigital.in/faqs
+- Privacy Policy: https://trigital.in/privacy-policy
+- Terms of Service: https://trigital.in/terms-of-service
+- Sitemap: https://www.trigital.in/sitemap.xml
+- Human sitemap: https://www.trigital.in/site-map
+
+### Company
+- About Us: https://trigital.in/company/about-us
+- Customers: https://trigital.in/company/customers
+- Our Team: https://trigital.in/company/our-team
+- Partners: https://trigital.in/company/partners
+
+### Services
+- Custom Software Development: https://trigital.in/services/custom-development
+- Cloud Consulting: https://trigital.in/services/cloud-consulting
+- AI/ML Services: https://trigital.in/services/ai-ml
+- AI/ML Consulting: https://trigital.in/services/ai-ml-consulting
+- Big Data Analytics: https://trigital.in/services/big-data-analytics
+- Big Data: https://trigital.in/services/big-data
+- Blockchain: https://trigital.in/services/blockchain
+- App Development: https://trigital.in/services/app-development
+- Integration: https://trigital.in/services/integration
+- Migration Services: https://trigital.in/services/migration-services
+
+### Products
+- NIPIGE: https://trigital.in/products/nipige
+
+### Platform (NIPIGE)
+- Our Platform NIPIGE: https://trigital.in/platform/our-platform-nipige
+- How It Works: https://trigital.in/platform/how-it-works
+- Key Features: https://trigital.in/platform/key-features
+- Market Solution: https://trigital.in/platform/market-solution
+- Deployment Model: https://trigital.in/platform/deployment-model
+
+### Solutions
+- Digital Commerce: https://trigital.in/solutions/digital-commerce
+- Digital Engagement: https://trigital.in/solutions/digital-engagement
+- Digital Service: https://trigital.in/solutions/digital-service
+- Subscription Monetization: https://trigital.in/solutions/subscription-monetization
+
+### Resources
+- Blogs: https://trigital.in/resources/blogs
+- Documentation: https://trigital.in/resources/documentation
+- Events & News: https://trigital.in/resources/events-news
+
+## Contact Information
+- Email: info@trigital.in
+- Phone: +91 7013870575
+- Address: Plot No 1/C, Sy No 83/1, Raidurgam Panmaktha, Hyderabad Knowledge City, Serilingamaplly, Hyderabad, Telangana 500081, India
+- Business Hours: Monday-Friday: 9:00 AM - 6:00 PM IST, Saturday: 10:00 AM - 4:00 PM IST, Sunday: Closed (24/7 Support Available)
+
+## Technology Stack
+- Framework: Next.js 16
+- Language: TypeScript
+- Styling: Tailwind CSS, DaisyUI
+- Icons: Heroicons, React Icons
+
+## Key Services
+1. Custom Software Development
+2. Cloud Consulting (AWS, Azure, GCP)
+3. AI/ML Solutions and Consulting
+4. Big Data Analytics
+5. Blockchain Development
+6. App Development (Web & Mobile)
+7. Integration Services
+8. Migration Services
+
+## Products
+- NIPIGE: Low-code/no-code digital enablement platform built on microservices architecture for rapid SaaS product development
+
+## Content
+The website includes blog posts, documentation, and resources covering topics such as:
+- Digital commerce
+- E-enablement
+- Business growth strategies
+- Technology insights
+- Industry best practices

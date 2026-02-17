@@ -8,6 +8,12 @@ import {
   CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "Cloud Consultancy | Trigital Tech",
+  description:
+    "AWS, Azure, and Google Cloud consulting. Cloud readiness, architecture design, migration, and cost optimization from Trigital.",
+};
+
 export default function CloudConsultancy() {
   const serviceList = [
     { label: "Cloud readiness assessment", icon: ClipboardDocumentListIcon },
@@ -27,21 +33,19 @@ export default function CloudConsultancy() {
     <main className="min-h-screen bg-base-200">
       <Section>
         <div className="space-y-20 py-16">
-
           {/* HERO */}
           <div className="text-center space-y-6">
             <h1 className="text-6xl tracking-tight font-extrabold text-primary">
               Cloud Consultancy
             </h1>
 
-            <p className="text-xl max-w-2xl mx-auto text-base-content/70 leading-relaxed">
+            <p className="text-xl max-w-2xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed">
               Strategic guidance for your cloud transformation journey
             </p>
           </div>
 
           {/* MAIN ROW */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-
             {/* Left content */}
             <div className="space-y-8">
               <div className="space-y-4">
@@ -49,10 +53,10 @@ export default function CloudConsultancy() {
                   Cloud Strategy & Planning
                 </h2>
 
-                <p className="text-base-content/70 leading-relaxed text-lg">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                   Our experts design a cloud strategy aligned with your goals.
-                  We evaluate your existing systems, recommend best-fit platforms,
-                  and plan your modernization roadmap.
+                  We evaluate your existing systems, recommend best-fit
+                  platforms, and plan your modernization roadmap.
                 </p>
               </div>
 
@@ -63,7 +67,10 @@ export default function CloudConsultancy() {
 
                 <ul className="space-y-3">
                   {serviceList.map(({ label, icon: Icon }) => (
-                    <li key={label} className="flex items-center gap-3 text-base-content">
+                    <li
+                      key={label}
+                      className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
+                    >
                       <Icon className="w-5 h-5 text-primary" />
                       {label}
                     </li>
@@ -84,7 +91,6 @@ export default function CloudConsultancy() {
                 Cloud Excellence
               </p>
             </div>
-
           </div>
 
           {/* CLOUD VENDORS */}
@@ -102,7 +108,9 @@ export default function CloudConsultancy() {
 
                 <h3 className="font-bold text-lg text-primary">{title}</h3>
 
-                <p className="text-base-content/70 text-sm">{desc}</p>
+                <p className="text-gray-700 dark:text-gray-300 text-sm">
+                  {desc}
+                </p>
 
                 <a
                   href="#"
@@ -122,10 +130,10 @@ export default function CloudConsultancy() {
 
             <div className="flex gap-6 justify-center flex-wrap">
               <a
-                href="/demo"
+                href="/contact-us?source=demo"
                 className="
-                  px-10 py-3 rounded-xl border border-primary bg-primary text-white text-lg font-semibold
-                  shadow-lg hover:shadow-xl hover:-translate-y-1 transition
+                  px-10 py-3 rounded-xl border border-primary text-primary
+                  text-lg font-semibold hover:bg-primary  hover:-translate-y-1 transition
                 "
               >
                 Schedule Consultation
@@ -135,14 +143,13 @@ export default function CloudConsultancy() {
                 href="/contact-us"
                 className="
                   px-10 py-3 rounded-xl border border-primary text-primary
-                  text-lg font-semibold hover:bg-primary hover:text-white hover:-translate-y-1 transition
+                  text-lg font-semibold hover:bg-primary  hover:-translate-y-1 transition
                 "
               >
                 Contact Us
               </a>
             </div>
           </div>
-
         </div>
       </Section>
     </main>

@@ -17,12 +17,12 @@ export default function FeatureCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 tracking-wide">
+      <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 tracking-wide">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
         {description}
       </p>
     </div>

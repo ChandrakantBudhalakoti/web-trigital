@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Section from "@/components/Section";
 
+export const metadata = {
+  title: "Our Team | Trigital Tech",
+  description:
+    "Meet the Trigital team driving digital transformation. Experts in software development, cloud, AI/ML, and enterprise solutions committed to your success.",
+};
+
 export default function OurTeam() {
   const teamMembers = [
     {
@@ -48,7 +54,7 @@ export default function OurTeam() {
           {/* heading */}
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <h1 className="text-5xl font-bold text-primary">Our Team</h1>
-            <p className="text-lg text-base-content/70">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               Expert professionals dedicated to your success
             </p>
           </div>
@@ -78,13 +84,13 @@ export default function OurTeam() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-lg font-bold text-base-content">
+                      <h3 className="text-lg font-bold text-gray-700 dark:text-gray-300">
                         {member.name}
                       </h3>
                       <p className="text-sm font-medium text-primary">
                         {member.role}
                       </p>
-                      <p className="text-sm text-base-content/60">
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
                         {member.expertise}
                       </p>
                     </div>
@@ -123,7 +129,7 @@ export default function OurTeam() {
                   <h3 className="font-semibold text-primary text-lg mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-base-content/70">{item.desc}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -134,14 +140,14 @@ export default function OurTeam() {
             <h2 className="text-2xl font-bold text-primary">
               Join Our Growing Team
             </h2>
-            <p className="text-base-content/70 max-w-xl mx-auto">
+            <p className="text-gray-700 dark:text-gray-300 max-w-xl mx-auto">
               We're always looking for talented professionals to join us
             </p>
 
             <a
               href="/contact-us"
               className="px-10 py-3 rounded-xl border border-primary text-primary text-lg
-                  hover:bg-primary hover:text-white hover:-translate-y-1 transition-all font-semibold"
+                  hover:bg-primary hover:-translate-y-1 transition-all font-semibold"
             >
               View Open Positions
             </a>

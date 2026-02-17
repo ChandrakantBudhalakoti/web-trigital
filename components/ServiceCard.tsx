@@ -24,11 +24,11 @@ export default function ServiceCard({
       </div>
 
       {/* title + text */}
-      <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-slate-100">
+      <h3 className="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-300">
         {title}
       </h3>
 
-      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">
         {description}
       </p>
 
@@ -37,7 +37,7 @@ export default function ServiceCard({
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-2">
             <CheckIcon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-            <span className="text-sm tracking-wide dark:text-slate-200">
+            <span className="text-sm tracking-wide dark:text-gray-300">
               {feature}
             </span>
           </li>

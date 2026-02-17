@@ -8,6 +8,12 @@ import {
   DocumentDuplicateIcon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "Migration Services | Trigital Tech",
+  description:
+    "Application, database, and infrastructure migration. Seamless cloud and data center migration with minimal downtime.",
+};
+
 export default function MigrationServices() {
   const migrationTypes = [
     { label: "Application migration", icon: CogIcon },
@@ -45,7 +51,7 @@ export default function MigrationServices() {
               Migration Services
             </h1>
 
-            <p className="text-xl text-base-content/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Seamless migration to modern platforms with minimal disruption.
             </p>
           </div>
@@ -72,7 +78,7 @@ export default function MigrationServices() {
                   End-to-End Migration
                 </h2>
 
-                <p className="text-base-content/70 leading-relaxed text-lg">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                   We manage full migration lifecycle from planning to
                   post-cutover support. Our proven methodologies ensure minimal
                   downtime, data integrity & predictable execution.
@@ -88,7 +94,7 @@ export default function MigrationServices() {
                   {migrationTypes.map(({ label, icon: Icon }) => (
                     <li
                       key={label}
-                      className="flex items-center gap-3 text-base-content"
+                      className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
                     >
                       <Icon className="w-5 h-5 text-primary" />
                       {label}
@@ -114,7 +120,9 @@ export default function MigrationServices() {
                   <h3 className="font-bold text-primary text-lg mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-base-content/70">{step.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    {step.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -130,18 +138,18 @@ export default function MigrationServices() {
               <a
                 href="/contact-us"
                 className="
-                  px-10 py-3 rounded-xl border border-primary bg-primary text-white shadow-lg 
-                  hover:shadow-xl hover:-translate-y-1 transition font-semibold
+                  px-10 py-3 rounded-xl border border-primary text-primary 
+                  hover:bg-primary  hover:-translate-y-1 transition font-semibold
                 "
               >
                 Start Assessment
               </a>
 
               <a
-                href="/demo"
+                href="/contact-us?source=demo"
                 className="
                   px-10 py-3 rounded-xl border border-primary text-primary 
-                  hover:bg-primary hover:text-white hover:-translate-y-1 transition font-semibold
+                  hover:bg-primary  hover:-translate-y-1 transition font-semibold
                 "
               >
                 Learn More

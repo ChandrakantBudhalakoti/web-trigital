@@ -8,7 +8,7 @@ export default function BigData() {
   return (
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Big Data Analytics</h1>
-      <div className="space-y-6 text-gray-600 leading-relaxed">
+      <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
           Transform your vast amounts of data into actionable business insights with Trigital's Big Data Analytics services. 
           We help organizations extract meaningful patterns, trends, and intelligence from complex datasets to drive informed 

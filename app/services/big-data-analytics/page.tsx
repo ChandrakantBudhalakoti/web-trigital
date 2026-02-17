@@ -8,6 +8,12 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "Big Data & Analytics | Trigital Tech",
+  description:
+    "Data warehouse design, ETL pipelines, real-time analytics, and business intelligence. Hadoop, Spark, and modern data stack expertise.",
+};
+
 export default function BigDataAnalytics() {
   const capabilities = [
     { label: "Data warehouse design", icon: ServerStackIcon },
@@ -41,7 +47,7 @@ export default function BigDataAnalytics() {
               Big Data Analytics
             </h1>
 
-            <p className="text-xl max-w-2xl mx-auto text-base-content/70 leading-relaxed">
+            <p className="text-xl max-w-2xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed">
               Turn massive enterprise data into actionable intelligence and
               business value.
             </p>
@@ -67,7 +73,7 @@ export default function BigDataAnalytics() {
                   Data-Driven Decisions
                 </h2>
 
-                <p className="text-base-content/70 leading-relaxed text-lg">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                   We help enterprises process, unify and analyze large datasets
                   to uncover insights that enable strategic decision-making and
                   innovation.
@@ -83,7 +89,7 @@ export default function BigDataAnalytics() {
                   {capabilities.map(({ icon: Icon, label }) => (
                     <li
                       key={label}
-                      className="flex items-center gap-3 text-base-content"
+                      className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
                     >
                       <Icon className="w-5 h-5 text-primary" />
                       {label}
@@ -107,7 +113,9 @@ export default function BigDataAnalytics() {
                 <ServerStackIcon className="w-8 h-8 text-primary" />
 
                 <h3 className="text-lg font-bold text-primary mt-3">{title}</h3>
-                <p className="text-base-content/70 mt-2 text-sm">{desc}</p>
+                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm">
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
@@ -118,7 +126,7 @@ export default function BigDataAnalytics() {
               Harness Your Data
             </h2>
 
-            <p className="text-base-content/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Transform raw enterprise data into competitive advantage through
               predictive analytics and real-time insight generation.
             </p>
@@ -127,18 +135,18 @@ export default function BigDataAnalytics() {
               <a
                 href="/contact-us"
                 className="
-                  px-10 py-3 rounded-xl border border-primary bg-primary text-white shadow-lg 
-                  hover:shadow-xl hover:-translate-y-1 transition font-semibold
+                  px-10 py-3 rounded-xl border border-primary text-primary font-semibold
+                  hover:bg-primary  hover:-translate-y-1 transition
                 "
               >
                 Discuss Your Data
               </a>
 
               <a
-                href="/demo"
+                href="/contact-us?source=demo"
                 className="
                   px-10 py-3 rounded-xl border border-primary text-primary font-semibold
-                  hover:bg-primary hover:text-white hover:-translate-y-1 transition
+                  hover:bg-primary  hover:-translate-y-1 transition
                 "
               >
                 See Examples

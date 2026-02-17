@@ -70,7 +70,7 @@ export default function TestimonialCarousel({
                 )}
                 <div>
                   <p className="font-semibold">{t.author}</p>
-                  <p className="text-sm text-gray-500">{t.company}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{t.company}</p>
                 </div>
               </div>
             </div>

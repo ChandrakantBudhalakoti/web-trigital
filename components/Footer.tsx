@@ -16,16 +16,6 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Products: [
-      { label: "Our Product NGB", href: "/products/our-product-ngb" },
-      { label: "NGB Features", href: "/products/features" },
-      { label: "Market & Solution", href: "/products/market-solution" },
-      {
-        label: "Pre-Built Integration",
-        href: "/products/pre-built-integration",
-      },
-      { label: "Deployment Model", href: "/products/deployment-model" },
-    ],
     Platform: [
       { label: "Nipige", href: "/platform/our-platform-nipige" },
       { label: "How It Works", href: "/platform/how-it-works" },
@@ -166,10 +156,10 @@ export default function Footer() {
               Email
             </p>
             <a
-              href="mailto:contact@trigitaltech.com"
+              href="mailto:info@trigital.in"
               className="text-slate-400 hover:text-orange-600 transition text-sm"
             >
-              contact@trigitaltech.com
+              info@trigital.in
             </a>
           </div>
           <div>
@@ -178,10 +168,10 @@ export default function Footer() {
               Phone
             </p>
             <a
-              href="tel:+919876543210"
+              href="tel:+917013870575"
               className="text-slate-400 hover:text-orange-600 transition text-sm"
             >
-              +91 (555) 123 123-4567
+              +91 7013870575
             </a>
           </div>
         </div>
@@ -205,7 +195,7 @@ export default function Footer() {
               Terms of Service
             </Link>
             <Link
-              href="/sitemap"
+              href="/site-map"
               className="text-slate-400 hover:text-orange-600 text-sm"
             >
               Sitemap

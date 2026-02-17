@@ -8,6 +8,12 @@ import {
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "AI/ML Consulting | Trigital Tech",
+  description:
+    "Transform your business with Trigital's AI and machine learning consulting. Strategy, predictive analytics, NLP, computer vision, and custom ML solutions.",
+};
+
 export default function AIMLConsulting() {
   const services = [
     { label: "AI strategy & roadmap", icon: DocumentChartBarIcon },
@@ -48,7 +54,7 @@ export default function AIMLConsulting() {
               AI/ML Consulting
             </h1>
 
-            <p className="text-xl max-w-2xl mx-auto text-base-content/70 leading-relaxed">
+            <p className="text-xl max-w-2xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed">
               Leverage AI and machine learning to drive measurable business
               outcomes.
             </p>
@@ -63,7 +69,7 @@ export default function AIMLConsulting() {
                   Intelligent Solutions
                 </h2>
 
-                <p className="text-base-content/70 leading-relaxed text-lg">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                   We identify high-value AI opportunities and build scalable,
                   production-grade solutions tailored to your workflows and
                   industry.
@@ -77,7 +83,7 @@ export default function AIMLConsulting() {
                   {services.map(({ label, icon: Icon }) => (
                     <li
                       key={label}
-                      className="flex items-center gap-3 text-base-content"
+                      className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
                     >
                       <Icon className="w-5 h-5 text-primary" />
                       {label}
@@ -112,7 +118,7 @@ export default function AIMLConsulting() {
                 "
               >
                 <h3 className="text-primary font-bold text-lg">{title}</h3>
-                <p className="text-base-content/70 mt-2">{desc}</p>
+                <p className="text-gray-700 dark:text-gray-300 mt-2">{desc}</p>
 
                 <a
                   href="#"
@@ -138,18 +144,18 @@ export default function AIMLConsulting() {
               <a
                 href="/contact-us"
                 className="
-                  px-10 py-3 rounded-xl border border-primary bg-primary text-white shadow-lg 
-                  hover:shadow-xl hover:-translate-y-1 transition font-semibold
+                  px-10 py-3 rounded-xl border border-primary text-primary font-semibold
+                  hover:bg-primary  hover:-translate-y-1 transition
                 "
               >
                 Consult Our Experts
               </a>
 
               <a
-                href="/demo"
+                href="/contact-us?source=demo"
                 className="
                   px-10 py-3 rounded-xl border border-primary text-primary font-semibold
-                  hover:bg-primary hover:text-white hover:-translate-y-1 transition
+                  hover:bg-primary  hover:-translate-y-1 transition
                 "
               >
                 View Case Studies

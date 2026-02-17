@@ -162,7 +162,7 @@ export default function Services() {
               <div className="card-body">
                 <div className="text-4xl font-bold text-primary mb-2">{step.num}</div>
                 <h4 className="card-title text-lg">{step.title}</h4>
-                <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
               </div>
             </div>
           ))}

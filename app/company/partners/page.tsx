@@ -41,7 +41,7 @@ export default function Partners() {
           {/* Heading */}
           <div className="text-center">
             <h1 className="text-5xl font-bold text-primary">Our Partners</h1>
-            <p className="text-xl text-base-content/70 mt-2">
+            <p className="text-xl text-gray-700 dark:text-gray-300 mt-2">
               We collaborate with industry leaders to deliver end-to-end
               solutions
             </p>
@@ -55,7 +55,7 @@ export default function Partners() {
                 className={`text-lg px-4 py-2 border-b-4 transition ${
                   selected === section
                     ? "border-primary font-bold text-primary"
-                    : "border-transparent text-base-content/60 hover:text-primary"
+                    : "border-transparent text-gray-700 dark:text-gray-300 hover:text-primary"
                 }`}
                 onClick={() => setSelected(section as PartnerSectionKey)}
               >
@@ -79,7 +79,7 @@ export default function Partners() {
                     height={60}
                     className="object-contain grayscale hover:grayscale-0 transition"
                   />
-                  <p className="text-sm text-base-content/70">{partner.name}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{partner.name}</p>
                 </div>
               </div>
             ))}
@@ -96,7 +96,7 @@ export default function Partners() {
                 <h3 className="font-bold text-lg text-primary mb-2">
                   Technology Partners
                 </h3>
-                <p className="text-base-content/70">
+                <p className="text-gray-700 dark:text-gray-300">
                   Integrate your platform or service with Trigital to expand
                   your reach.
                 </p>
@@ -105,7 +105,7 @@ export default function Partners() {
                 <h3 className="font-bold text-lg text-primary mb-2">
                   Integration Partners
                 </h3>
-                <p className="text-base-content/70">
+                <p className="text-gray-700 dark:text-gray-300">
                   Become a certified partner and serve customers globally.
                 </p>
               </div>
@@ -113,7 +113,7 @@ export default function Partners() {
                 <h3 className="font-bold text-lg text-primary mb-2">
                   Consulting Partners
                 </h3>
-                <p className="text-base-content/70">
+                <p className="text-gray-700 dark:text-gray-300">
                   Partner with us to deliver consulting and digital
                   transformation solutions.
                 </p>
@@ -122,7 +122,7 @@ export default function Partners() {
                 <h3 className="font-bold text-lg text-primary mb-2">
                   Reseller Partners
                 </h3>
-                <p className="text-base-content/70">
+                <p className="text-gray-700 dark:text-gray-300">
                   Resell Trigital solutions with attractive margins and support.
                 </p>
               </div>
@@ -134,14 +134,14 @@ export default function Partners() {
             <h2 className="text-2xl font-bold text-primary">
               Ready to Partner With Us?
             </h2>
-            <p className="text-base-content/70 max-w-2xl mx-auto">
+            <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
               Join our trusted partner ecosystem and unlock new opportunities.
             </p>
 
             <a
               href="/contact-us"
               className="px-10 py-3 rounded-xl border border-primary text-primary text-lg
-                  hover:bg-primary hover:text-white hover:-translate-y-1 transition-all font-semibold"
+                  hover:bg-primary hover:-translate-y-1 transition-all font-semibold"
             >
               Become a Partner
             </a>

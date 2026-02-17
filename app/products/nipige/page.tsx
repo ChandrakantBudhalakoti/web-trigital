@@ -2,6 +2,9 @@ import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
 import FeatureCard from '@/components/FeatureCard';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { getProductSchema } from '@/lib/structured-data';
+import { SITE_URL } from '@/lib/seo';
 import {
   BoltIcon,
   ArrowPathIcon,
@@ -65,9 +68,21 @@ const features = [
   },
 ];
 
+const NIPIGE_URL = `${SITE_URL}/products/nipige`;
+
 export default function NIPIGEProduct() {
   return (
     <>
+      <JsonLd
+        data={getProductSchema({
+          name: 'NIPIGE - Digital Commerce Platform',
+          description:
+            'NIPIGE is a cutting-edge low-code/no-code platform for digital business enablement. Build B2B, B2C, and B2B2C solutions rapidly with microservices architecture.',
+          url: NIPIGE_URL,
+          image: `${SITE_URL}/assets/images/Nipige/Platform_NIPIGE.svg`,
+          brand: 'Trigital Technologies',
+        })}
+      />
       <HeroSection
         title="NIPIGE - Digital Commerce Platform"
         subtitle="Build, scale, and manage your digital business with a cutting-edge low-code platform"
@@ -144,7 +159,7 @@ export default function NIPIGEProduct() {
             <div key={idx} className="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
               <div className="card-body">
                 <h4 className="card-title">{useCase.title}</h4>
-                <p className="text-gray-600 dark:text-gray-300">{useCase.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{useCase.description}</p>
               </div>
             </div>
           ))}
@@ -163,25 +178,25 @@ export default function NIPIGEProduct() {
               <div className="space-y-4">
                 <div>
                   <p className="font-semibold mb-2">Scalability</p>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Scale individual services independently based on demand
                   </p>
                 </div>
                 <div>
                   <p className="font-semibold mb-2">Resilience</p>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Isolate failures and maintain system availability
                   </p>
                 </div>
                 <div>
                   <p className="font-semibold mb-2">Flexibility</p>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Update and deploy services without affecting the entire system
                   </p>
                 </div>
                 <div>
                   <p className="font-semibold mb-2">Technology Diversity</p>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Use different technologies for different services
                   </p>
                 </div>
@@ -223,7 +238,7 @@ export default function NIPIGEProduct() {
               <div className="card-body text-center">
                 <div className="flex justify-center mb-4">{option.icon}</div>
                 <h4 className="card-title justify-center">{option.option}</h4>
-                <p className="text-gray-600 dark:text-gray-300">{option.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{option.description}</p>
               </div>
             </div>
           ))}
@@ -265,7 +280,7 @@ export default function NIPIGEProduct() {
             <div key={idx} className="card bg-base-100 shadow-md">
               <div className="card-body">
                 <h4 className="card-title text-lg">{benefit.title}</h4>
-                <p className="text-gray-600 dark:text-gray-300">{benefit.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{benefit.description}</p>
               </div>
             </div>
           ))}
@@ -279,7 +294,7 @@ export default function NIPIGEProduct() {
             Start building powerful digital solutions with NIPIGE today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/demo" className="btn btn-light btn-lg">
+            <Link href="/contact-us?source=demo" className="btn btn-light btn-lg">
               Get Started
             </Link>
             <Link href="/contact-us" className="btn btn-outline btn-light btn-lg">

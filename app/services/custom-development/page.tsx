@@ -8,7 +8,7 @@ export default function CustomDevelopment() {
   return (
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Custom Software Development</h1>
-      <div className="space-y-6 text-gray-600 leading-relaxed">
+      <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
           At Trigital Technologies, we specialize in creating custom software solutions tailored to your specific business needs. 
           Our experienced development team works closely with you to understand your requirements and deliver solutions that drive 

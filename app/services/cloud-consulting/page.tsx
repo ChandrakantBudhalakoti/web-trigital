@@ -8,7 +8,7 @@ export default function CloudConsulting() {
   return (
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Cloud Consulting</h1>
-      <div className="space-y-6 text-gray-600 leading-relaxed">
+      <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
           Transform your business with strategic cloud consulting services from Trigital Technologies. Our cloud experts help 
           you navigate the complexities of cloud adoption and optimization to maximize your business potential.

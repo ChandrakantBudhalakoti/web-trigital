@@ -11,6 +11,12 @@ import {
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "Documentation | Trigital Tech",
+  description:
+    "Technical documentation, API reference, integration guides, deployment, and troubleshooting for Trigital products and platforms.",
+};
+
 type DocSectionKey =
   | "Getting Started"
   | "API Reference"

@@ -2,6 +2,8 @@ import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
 import Link from 'next/link';
 import { CheckIcon } from '@heroicons/react/24/outline';
+import JsonLd from '@/components/JsonLd';
+import { getAboutPageSchema, getOrganizationSchema } from '@/lib/structured-data';
 
 export const metadata = {
   title: 'About Us | Trigital Tech',
@@ -12,6 +14,7 @@ export const metadata = {
 export default function AboutUs() {
   return (
     <>
+      <JsonLd data={[getAboutPageSchema(), getOrganizationSchema()]} />
       {/* HERO */}
       <HeroSection
         title="About Trigital"
@@ -28,7 +31,7 @@ export default function AboutUs() {
         <div className="grid md:grid-cols-2 gap-10">
           <div className="bg-base-100 p-8 rounded-xl shadow-lg border border-white/10">
             <h3 className="text-xl font-bold mb-3 text-primary">Mission</h3>
-            <p className="text-base-content/70 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Provide the most responsive, functional, and innovative technology solutions
               helping businesses accelerate their transformation journey.
             </p>
@@ -36,7 +39,7 @@ export default function AboutUs() {
 
           <div className="bg-base-100 p-8 rounded-xl shadow-lg border border-white/10">
             <h3 className="text-xl font-bold mb-3 text-primary">Vision</h3>
-            <p className="text-base-content/70 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Become a global leader delivering scalable, secure, and value-driven digital
               platforms to power growth.
             </p>
@@ -64,7 +67,7 @@ export default function AboutUs() {
               className="p-8 bg-base-100 rounded-xl shadow-lg border border-white/10 hover:shadow-xl transition"
             >
               <h4 className="font-bold text-lg text-primary mb-2">{value}</h4>
-              <p className="text-base-content/70">
+              <p className="text-gray-700 dark:text-gray-300">
                 {value === 'Excellence'
                   ? 'Delivering outstanding solutions consistently.'
                   : value === 'Courage'
@@ -120,7 +123,7 @@ export default function AboutUs() {
               ].map((sector, idx) => (
                 <li key={idx} className="flex items-center gap-3">
                   <CheckIcon className="w-5 h-5 text-primary" />
-                  <span className="text-base-content/80">{sector}</span>
+                  <span className="text-gray-700 dark:text-gray-300">{sector}</span>
                 </li>
               ))}
             </ul>
@@ -141,7 +144,7 @@ export default function AboutUs() {
               ].map((specialty, idx) => (
                 <li key={idx} className="flex items-center gap-3">
                   <CheckIcon className="w-5 h-5 text-primary" />
-                  <span className="text-base-content/80">{specialty}</span>
+                  <span className="text-gray-700 dark:text-gray-300">{specialty}</span>
                 </li>
               ))}
             </ul>
@@ -161,7 +164,7 @@ export default function AboutUs() {
           <Link
             href="/contact-us"
             className="px-10 py-3 rounded-xl border border-primary text-primary text-lg
-                  hover:bg-primary hover:text-white hover:-translate-y-1 transition-all font-semibold"
+                  hover:bg-primary hover:-translate-y-1 transition-all font-semibold"
           >
             Get in Touch
           </Link>

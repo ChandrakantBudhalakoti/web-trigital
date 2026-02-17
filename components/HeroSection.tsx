@@ -22,7 +22,7 @@ export default function HeroSection({
   return (
     <section
       className={`${backgroundClass} ${
-        isDark ? "text-white" : "text-gray-900"
+        isDark ? "text-white" : "text-gray-700 dark:text-gray-300"
       } py-20 px-4 sm:py-32`}
     >
       <div className="max-w-7xl mx-auto text-center">

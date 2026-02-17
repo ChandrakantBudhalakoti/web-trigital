@@ -9,6 +9,12 @@ import {
   RocketLaunchIcon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "Integration Services | Trigital Tech",
+  description:
+    "Connect systems, applications, and data pipelines. API integration, legacy modernization, and seamless enterprise connectivity.",
+};
+
 export default function Integration() {
   return (
     <main className="min-h-screen bg-[#071120] text-white">
@@ -142,7 +148,7 @@ export default function Integration() {
               </a>
 
               <a
-                href="/demo"
+                href="/contact-us?source=demo"
                 className="
                   px-10 py-3 rounded-full border border-white/30 text-white 
                   hover:border-blue-500 hover:text-blue-400 hover:-translate-y-1 

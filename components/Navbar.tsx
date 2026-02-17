@@ -23,19 +23,6 @@ export default function Navbar() {
 
   const navSections = [
     {
-      label: "NGB",
-      items: [
-        { href: "/products/our-product-ngb", label: "Our Product NGB" },
-        { href: "/products/features", label: "NGB Features" },
-        { href: "/products/market-solution", label: "Market & Solution" },
-        {
-          href: "/products/pre-built-integration",
-          label: "Pre-Built Integration",
-        },
-        { href: "/products/deployment-model", label: "Deployment Model" },
-      ],
-    },
-    {
       label: "Nipige",
       items: [
         { href: "/platform/our-platform-nipige", label: "Our Platform Nipige" },
@@ -107,7 +94,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-1">
             {navSections.map((section) => (
               <div key={section.label} className="relative group">
-                <button className="px-4 py-2 text-base-content hover:bg-base-200 rounded-md transition-colors flex items-center gap-1">
+                <button className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-base-200 rounded-md transition-colors flex items-center gap-1">
                   {section.label}
                   <ChevronDownIcon className="h-4 w-4" />
                 </button>
@@ -118,7 +105,7 @@ export default function Navbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2 text-base-content hover:bg-base-200 rounded-md transition-colors text-sm"
+                        className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-base-200 rounded-md transition-colors text-sm"
                       >
                         {item.label}
                       </Link>
@@ -131,7 +118,7 @@ export default function Navbar() {
 
           {/* CTA Button & Mobile Menu Toggle */}
           <div className="flex items-center gap-4">
-            <Link
+            {/* <Link
               href="https://www.fastforge.ai/"
               className="hidden lg:flex flex-shrink-0"
               target="_blank"
@@ -144,10 +131,10 @@ export default function Navbar() {
                 height={40}
                 className="hover:opacity-90 cursor-pointer"
               />
-            </Link>
+            </Link> */}
 
             <Link
-              href="/demo"
+              href="/contact-us?source=demo"
               className="hidden lg:inline-flex items-center bg-[#0B62FF] text-white font-semibold px-6 py-2 rounded-lg hover:bg-[#0047d6] transition-all"
             >
               Demo
@@ -174,7 +161,7 @@ export default function Navbar() {
               <div key={section.label}>
                 <button
                   onClick={() => toggleDropdown(section.label)}
-                  className="w-full text-left px-4 py-2 font-medium text-base-content hover:bg-base-200 rounded-md flex justify-between items-center"
+                  className="w-full text-left px-4 py-2 font-medium text-gray-700 dark:text-gray-300 hover:bg-base-200 rounded-md flex justify-between items-center"
                 >
                   {section.label}
                   <ChevronDownIcon
@@ -189,7 +176,7 @@ export default function Navbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2 text-sm text-base-content hover:bg-base-200 rounded-md"
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-base-200 rounded-md"
                         onClick={() => setIsMobileOpen(false)}
                       >
                         {item.label}
@@ -200,7 +187,7 @@ export default function Navbar() {
               </div>
             ))}
             <Link
-              href="/demo"
+              href="/contact-us?source=demo"
               onClick={() => setIsMobileOpen(false)}
               className="block w-full bg-[#0B62FF] text-white font-semibold text-center px-6 py-3 rounded-lg hover:bg-[#0047d6] transition-all mt-4"
             >

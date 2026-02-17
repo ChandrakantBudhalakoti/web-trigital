@@ -8,6 +8,12 @@ import {
   CpuChipIcon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "App Development | Trigital Tech",
+  description:
+    "Custom web and mobile app development by Trigital. React, Vue, Angular, Node.js, and Flutter. Enterprise solutions and API development.",
+};
+
 export default function AppDevelopment() {
   const services = [
     { label: "Web application development", icon: CodeBracketIcon },
@@ -45,7 +51,7 @@ export default function AppDevelopment() {
               App Development
             </h1>
 
-            <p className="text-xl text-base-content/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
               We build secure, scalable, high-performance custom applications.
             </p>
           </div>
@@ -59,7 +65,7 @@ export default function AppDevelopment() {
                   Full-Stack Development
                 </h2>
 
-                <p className="text-base-content/70 text-lg leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
                   Our engineering teams build enterprise-grade applications,
                   tailored to solve business problems with the right technology,
                   performance, and security foundation.
@@ -73,7 +79,7 @@ export default function AppDevelopment() {
                   {services.map(({ label, icon: Icon }) => (
                     <li
                       key={label}
-                      className="flex items-center gap-3 text-base-content"
+                      className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
                     >
                       <Icon className="w-5 h-5 text-primary" />
                       {label}
@@ -108,7 +114,9 @@ export default function AppDevelopment() {
                 "
               >
                 <h3 className="text-primary font-bold text-lg">{title}</h3>
-                <p className="text-base-content/70 mt-2 text-sm">{desc}</p>
+                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm">
+                  {desc}
+                </p>
 
                 <a
                   href="#"
@@ -134,18 +142,18 @@ export default function AppDevelopment() {
               <a
                 href="/contact-us"
                 className="
-                  px-10 py-3 rounded-xl border border-primary bg-primary text-white shadow-lg 
-                  hover:-translate-y-1 hover:shadow-xl transition font-semibold
+                  px-10 py-3 rounded-xl border border-primary text-primary
+                  hover:bg-primary  hover:-translate-y-1 transition font-semibold
                 "
               >
                 Start Your Project
               </a>
 
               <a
-                href="/demo"
+                href="/contact-us?source=demo"
                 className="
                   px-10 py-3 rounded-xl border border-primary text-primary
-                  hover:bg-primary hover:text-white hover:-translate-y-1 transition font-semibold
+                  hover:bg-primary  hover:-translate-y-1 transition font-semibold
                 "
               >
                 View Portfolio

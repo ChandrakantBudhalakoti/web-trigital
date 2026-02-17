@@ -8,7 +8,7 @@ export default function AIML() {
   return (
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">AI & Machine Learning</h1>
-      <div className="space-y-6 text-gray-600 leading-relaxed">
+      <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
           Harness the power of artificial intelligence and machine learning to transform your business operations. At Trigital 
           Technologies, we develop cutting-edge AI and ML solutions that drive innovation, improve efficiency, and unlock new 

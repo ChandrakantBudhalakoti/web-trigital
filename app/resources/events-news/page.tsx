@@ -4,6 +4,12 @@ import {
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
 
+export const metadata = {
+  title: "Events & News | Trigital Tech",
+  description:
+    "Upcoming events, workshops, and news from Trigital Technologies. Stay updated on digital transformation, cloud, and AI/ML insights.",
+};
+
 export default function EventsNews() {
   const events = [
     {
@@ -33,12 +39,6 @@ export default function EventsNews() {
   ];
 
   const news = [
-    {
-      title: "Trigital Launches NGB 5.0",
-      date: "December 10, 2024",
-      summary:
-        "AI-powered features and enhanced enterprise security introduced.",
-    },
     {
       title: "Enterprise Partnership Announced",
       date: "December 5, 2024",

@@ -1,6 +1,8 @@
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
+import JsonLd from "@/components/JsonLd";
+import { getContactPageSchema, getLocalBusinessSchema } from "@/lib/structured-data";
 
 import {
   MapPinIcon,
@@ -12,12 +14,19 @@ import {
 export const metadata = {
   title: "Contact Us | Trigital Tech",
   description:
-    "Get in touch with Trigital Technologies. We are here to help you with your technology needs.",
+    "Contact Trigital Technologies for expert software development, cloud consulting, AI/ML solutions, and digital transformation services. Reach out via phone, email, or visit our Hyderabad office. We're here to help transform your business with cutting-edge technology solutions.",
 };
 
-export default function ContactUs() {
+interface ContactUsProps {
+  searchParams: Promise<{ source?: string }>;
+}
+
+export default async function ContactUs({ searchParams }: ContactUsProps) {
+  const params = await searchParams;
+  const isDemo = params?.source === "demo";
   return (
     <>
+      <JsonLd data={[getContactPageSchema(), getLocalBusinessSchema()]} />
       <HeroSection
         title="Get in Touch"
         subtitle="We're here to help you with your digital transformation journey"
@@ -51,17 +60,17 @@ export default function ContactUs() {
               </h3>
               <p>
                 <a
-                  href="mailto:contact@trigitaltech.com"
+                  href="mailto:info@trigital.in"
                   className="hover:text-primary transition block"
                 >
-                  contact@trigitaltech.com
+                  info@trigital.in
                 </a>
-                <a
+                {/* <a
                   href="mailto:sales@trigitaltech.com"
                   className="hover:text-primary transition block"
                 >
                   sales@trigitaltech.com
-                </a>
+                </a> */}
               </p>
             </div>
 
@@ -73,17 +82,17 @@ export default function ContactUs() {
               </h3>
               <p>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+917013870575"
                   className="hover:text-primary block"
                 >
-                  +91 (555) 123-4567
+                  +91 7013870575
                 </a>
-                <a
-                  href="tel:+919876543211"
+                {/* <a
+                  href="tel:+917013870575"
                   className="hover:text-primary block"
                 >
-                  +91 (555) 123-4568
-                </a>
+                  +91 7013870575
+                </a> */}
               </p>
             </div>
 
@@ -112,7 +121,7 @@ export default function ContactUs() {
               Send us a Message
             </h2>
 
-            <ContactForm />
+            <ContactForm isDemo={isDemo} />
           </div>
         </div>
       </Section>
