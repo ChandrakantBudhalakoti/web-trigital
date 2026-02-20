@@ -2,11 +2,26 @@ import Section from "@/components/Section";
 import Link from "next/link";
 import { blogService, BlogPost } from "@/app/lib/api/blog-service";
 
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "Blogs | Trigital Tech - Digital Commerce Insights",
   description:
-    "Explore articles, guides, and insights on digital commerce, e-enablement, and business growth strategies.",
-};
+    "Articles, guides, insights on digital commerce, e-enablement, business growth. Trigital technology and digital transformation blog.",
+  keywords:
+    "Trigital blog, technology blog, digital commerce blog, software development blog, cloud computing blog, AI ML blog, business insights, technology articles, digital transformation blog",
+  path: "/resources/blogs",
+});
+
+const schema = createWebPageSchema({
+  name: "Blogs | Trigital Tech",
+  description: "Explore articles, guides, and insights on digital commerce, e-enablement, and business growth strategies.",
+  path: "/resources/blogs",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Resources", url: "/resources/blogs" }, { name: "Blogs", url: "/resources/blogs" }],
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -48,6 +63,7 @@ export default async function BlogsPage() {
 
   return (
     <>
+      <JsonLd data={schema} />
       {/* Page Title */}
       <Section>
         <div className="max-w-7xl mx-auto text-center">

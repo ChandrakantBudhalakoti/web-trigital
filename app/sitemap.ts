@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogService } from "@/app/lib/api/blog-service";
+import { customers } from "@/lib/customers-data";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.trigital.in";
 
@@ -16,6 +17,10 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: "always"
   { path: "company/partners", priority: 0.8, changeFrequency: "monthly" },
   { path: "company/our-team", priority: 0.8, changeFrequency: "monthly" },
   { path: "products/nipige", priority: 0.9, changeFrequency: "monthly" },
+  { path: "products/trinovo", priority: 0.9, changeFrequency: "monthly" },
+  { path: "products/trinovo/advantages", priority: 0.8, changeFrequency: "monthly" },
+  { path: "products/trinovo/technology", priority: 0.8, changeFrequency: "monthly" },
+  { path: "products/trinovo/modules", priority: 0.8, changeFrequency: "monthly" },
   { path: "platform/our-platform-nipige", priority: 0.9, changeFrequency: "monthly" },
   { path: "platform/how-it-works", priority: 0.8, changeFrequency: "monthly" },
   { path: "platform/key-features", priority: 0.8, changeFrequency: "monthly" },
@@ -51,6 +56,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority,
   }));
 
+  const customerEntries: MetadataRoute.Sitemap = customers.map((c) => ({
+    url: `${BASE_URL}/company/customers/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   let blogEntries: MetadataRoute.Sitemap = [];
   try {
     const blogs = await blogService.getAllBlogs();
@@ -64,5 +76,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap: failed to fetch blogs", err);
   }
 
-  return [...staticEntries, ...blogEntries];
+  return [...staticEntries, ...customerEntries, ...blogEntries];
 }

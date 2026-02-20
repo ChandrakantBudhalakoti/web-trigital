@@ -1,12 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { getProductSchema, getFAQPageSchema } from "@/lib/structured-data";
+import { PAGE_FAQS } from "@/lib/page-faqs";
+import { SITE_URL } from "@/lib/seo";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Our Platform NIPIGE | Trigital Tech",
   description:
-    "Discover NIPIGE, Trigital's enterprise-wide no-code/low-code platform for rapid digital product development. Reduce costs by 90% and time to market by 70% with our innovative SaaS solution.",
-};
+    "Discover NIPIGE: Trigital's no-code/low-code platform for rapid digital products. Reduce costs by 90%, time to market by 70%. SaaS & enterprise solution.",
+  keywords:
+    "NIPIGE platform, no-code platform, low-code platform, digital product development, SaaS platform, enterprise platform, rapid development platform, digital commerce platform, subscription platform",
+  path: "/platform/our-platform-nipige",
+});
+
+const platformSchemas = [
+  getProductSchema({
+    name: "NIPIGE Platform",
+    description: "Trigital's no-code/low-code platform for rapid digital products. Reduce costs by 90%, time to market by 70%. SaaS & enterprise solution.",
+    url: `${SITE_URL}/platform/our-platform-nipige`,
+    image: `${SITE_URL}/assets/images/Nipige/Platform_NIPIGE.svg`,
+  }),
+  getFAQPageSchema(PAGE_FAQS["/platform/our-platform-nipige"]),
+];
 
 export default function OurPlatformNipige() {
   const keyFeatures = [
@@ -21,7 +39,9 @@ export default function OurPlatformNipige() {
   const deploymentOptions = ["SaaS", "Private Cloud", "On Premise"];
 
   return (
-    <main className="min-h-screen">
+    <>
+      <JsonLd data={platformSchemas} />
+    <div className="min-h-screen">
       {/* —————————————————————————————————————————————————————————————
           1. HERO SECTION — Full width blue gradient, title + paragraph left, SVG right
           ————————————————————————————————————————————————————————————— */}
@@ -63,9 +83,15 @@ export default function OurPlatformNipige() {
           ————————————————————————————————————————————————————————————— */}
       <section className="w-full bg-[#EBF7FF]">
         <div className="max-w-7xl mx-auto px-6">
-          {/* <h2 className="text-3xl md:text-4xl font-bold text-gray-700 dark:text-gray-300 text-center mb-12">
+          <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-700 mb-6">
             Platform NIPIGE
-          </h2> */}
+          </h2>
+          <p className="text-gray-700 dark:text-gray-600 text-center max-w-3xl mx-auto mb-4 leading-relaxed">
+            NIPIGE provides key features including Tailored Workflow, Dynamic Catalogue, Multi-Channel Integration, Exclusive POS system, Localization of Currency, and Role Management. The platform supports SaaS, Private Cloud, and On-Premise deployment to fit your security, compliance, and scalability needs.
+          </p>
+          <p className="text-gray-600 dark:text-gray-500 text-center max-w-3xl mx-auto mb-8 leading-relaxed">
+            Built with microservices architecture, NIPIGE enables rapid configuration for digital commerce, subscription monetization, and B2B/B2C marketplaces without extensive coding. Explore key features, deployment options, and market solutions below.
+          </p>
           <div className="relative w-full aspect-[2/1] min-h-[280px] md:min-h-[360px]">
             <Image
               src="/assets/images/Nipige/platform_nipige (1).svg"
@@ -87,9 +113,9 @@ export default function OurPlatformNipige() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-700 dark:text-gray-300">
                 Key Product Features
               </h2>
-              <p className="text-gray-700 dark:text-gray-300 mt-4">
+              <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">
                 You can trust us to simplify every step of your business journey
-                better than anyone else.
+                better than anyone else. NIPIGE&apos;s Tailored Workflow lets you configure business processes without code. Dynamic Catalogue supports complex product hierarchies and variants. Multi-Channel Integration connects your sales channels, and the Exclusive POS system handles in-store transactions. Localization of Currency and Role Management ensure global readiness and secure access control.
               </p>
               <ul className="space-y-3 mt-6">
                 {keyFeatures.map((item) => (
@@ -203,6 +229,7 @@ export default function OurPlatformNipige() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
+    </>
   );
 }

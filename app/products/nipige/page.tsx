@@ -19,11 +19,16 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 
-export const metadata = {
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: 'NIPIGE - Digital Commerce Platform | Trigital Tech',
   description:
-    'NIPIGE is a cutting-edge low-code/no-code platform for digital business enablement. Build B2B, B2C, and B2B2C solutions rapidly with microservices architecture.',
-};
+    'NIPIGE: low-code/no-code platform for digital business. Build B2B, B2C, B2B2C solutions rapidly with microservices architecture.',
+  keywords:
+    'NIPIGE, digital commerce platform, low-code platform, no-code platform, B2B platform, B2C platform, B2B2C platform, microservices architecture, digital business platform, SaaS platform, subscription management, billing software',
+  path: '/products/nipige',
+});
 
 const features = [
   {

@@ -5,45 +5,115 @@ import Image from "next/image";
 import Section from "@/components/Section";
 
 const partnerSections = {
-  Cloud: [
+  "Cloud Partners": [
     { name: "AWS", logo: "/assets/images/partners/aws.svg" },
     { name: "Google Cloud", logo: "/assets/images/partners/google-cloud.svg" },
     { name: "Microsoft Azure", logo: "/assets/images/partners/azure.svg" },
     { name: "IONOS", logo: "/assets/images/partners/ionos.svg" },
+    { name: "GoDaddy", logo: "/assets/images/partners/GoDaddy_Logo.svg" },
+    { name: "WordPress", logo: "/assets/images/partners/WordPress_Logo.svg" },
   ],
-  Ecommerce: [
-    { name: "Shopify", logo: "/assets/images/partners/shopify.svg" },
-    { name: "GoDaddy", logo: "/assets/images/partners/godaddy.svg" },
-    { name: "WordPress", logo: "/assets/images/partners/wordpress.svg" },
+  "Sales & Marketing": [
+    {
+      name: "GROSVENOR",
+      logo: "/assets/images/partners/Gml_logo-2048x715.webp",
+    },
+    { name: "ADGCE", logo: "/assets/images/partners/ADGCE_logo.png" },
+    { name: "CipherLane", logo: "/assets/images/partners/cipherlane_logo.png" },
+    {
+      name: "Uniao Metalo Mecanica",
+      logo: "/assets/images/partners/UMM_Uniao_Metalo-Mecanica-Logo.svg",
+    },
+    {
+      name: "Janova Solutions",
+      logo: "/assets/images/partners/janova_solutions.png",
+    },
+    {
+      name: "Beaualpha Future Faster Gorever",
+      logo: "/assets/images/partners/Beaualpha_Future_Faster_Gorever.png",
+    },
   ],
-  Payments: [
+  "Payment Partners": [
     { name: "Stripe", logo: "/assets/images/partners/stripe.svg" },
+    {
+      name: "Cashfree Payments",
+      logo: "/assets/images/partners/cashfree_logo.svg",
+    },
     { name: "PayPal", logo: "/assets/images/partners/PayPal.svg" },
     { name: "Paytm", logo: "/assets/images/partners/paytm.svg" },
+    { name: "Razorpay", logo: "/assets/images/partners/razorpay_logo.svg" },
+    {
+      name: "Interswitch",
+      logo: "/assets/images/partners/interswitch_logo.png",
+    },
+    { name: "Easebuzz", logo: "/assets/images/partners/easebuzz_logo.png" },
   ],
-  CRM: [
+  "Software & Vendors": [
+    {
+      name: "Intuit QuickBooks",
+      logo: "/assets/images/partners/Intuit_QuickBooks_logo.png",
+    },
+    { name: "Dunzo", logo: "/assets/images/partners/dunzo_logo.png" },
+    { name: "Shiprocket", logo: "/assets/images/partners/SR-logo-wiki.png" },
+    { name: "MongoDB", logo: "/assets/images/partners/mongo_db_logo-1536x414.png" },
+    { name: "Redis", logo: "/assets/images/partners/redis_logo-1536x1024.png" },
+    { name: "elasticSearch", logo: "/assets/images/partners/elasticSearch_logo.png" },
     { name: "Salesforce", logo: "/assets/images/partners/salesforce.svg" },
-    { name: "SAP", logo: "/assets/images/partners/sap.svg" },
-    { name: "Oracle", logo: "/assets/images/partners/oracle.svg" },
   ],
 };
 
-// 👉 extract union of keys
 type PartnerSectionKey = keyof typeof partnerSections;
 
 export default function Partners() {
-  const [selected, setSelected] = useState<PartnerSectionKey>("Cloud");
+  const [selected, setSelected] = useState<PartnerSectionKey>("Cloud Partners");
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
+      {/* Hero Section — dark blue, left text, partner_top_Banner.svg background (right) */}
+      <section
+        className="relative w-full bg-[#0A1121] text-white py-16 md:py-24"
+        style={{
+          backgroundImage:
+            "url('/assets/images/Nipige/partner_top_Banner.svg')",
+          backgroundPosition: "right center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#0A1121] via-[#0A1121]/95 to-transparent md:via-[#0A1121]/85"
+          aria-hidden
+        />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold">Partners</h1>
+              <p className="text-gray-200 mt-4 max-w-xl leading-relaxed mx-auto md:mx-0">
+                Trigital extensive partner ecosystem opens doors to the
+                subscription landscape, offering heightened value to merchants,
+                merchant aggregators, and marketplaces across the globe.
+              </p>
+            </div>
+            <div className="hidden md:block" aria-hidden />
+          </div>
+        </div>
+      </section>
+
       <Section>
         <div className="space-y-12">
-          {/* Heading */}
-          <div className="text-center">
-            <h1 className="text-5xl font-bold text-primary">Our Partners</h1>
+          {/* Section heading (no longer main page title) */}
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">
+              Trusted Partners
+            </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mt-2">
-              We collaborate with industry leaders to deliver end-to-end
-              solutions
+              We collaborate with industry leaders to deliver end-to-end solutions.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+              Our partnership with AWS, Google Cloud, Microsoft Azure, Stripe, and other technology providers ensures we deliver enterprise-grade solutions. Trigital integrates with leading payment gateways, cloud platforms, and software vendors to power digital transformation for our clients worldwide.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+              Our Cloud Partners provide scalable infrastructure for NIPIGE and Trinovo deployments. Payment Partners enable seamless billing and subscription management. Software and vendor partnerships extend our capabilities in analytics, shipping, and CRM. Whether you are a technology provider, reseller, or consulting firm, we offer partnership programs with training, certification, and co-marketing support.
             </p>
           </div>
 
@@ -77,9 +147,11 @@ export default function Partners() {
                     alt={partner.name}
                     width={120}
                     height={60}
-                    className="object-contain grayscale hover:grayscale-0 transition"
+                    className="object-contain"
                   />
-                  <p className="text-sm text-gray-700 dark:text-gray-300">{partner.name}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    {partner.name}
+                  </p>
                 </div>
               </div>
             ))}
@@ -148,6 +220,6 @@ export default function Partners() {
           </div>
         </div>
       </Section>
-    </main>
+    </div>
   );
 }

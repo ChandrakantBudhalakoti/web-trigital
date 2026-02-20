@@ -1,11 +1,27 @@
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { getServiceSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "Cloud Consulting | Trigital Tech",
   description:
-    "Maximize your business potential with tailored cloud solutions. Expert guidance on IaaS, PaaS, SaaS optimization, cloud migration, and infrastructure management.",
-};
+    "Tailored cloud solutions: IaaS, PaaS, SaaS optimization, cloud migration, infrastructure management. AWS, Azure, Google Cloud expertise.",
+  keywords:
+    "cloud consulting, cloud services, IaaS, PaaS, SaaS, cloud migration, cloud infrastructure, cloud strategy, cloud optimization, AWS consulting, Azure consulting, Google Cloud consulting",
+  path: "/services/cloud-consulting",
+});
+
+const schema = getServiceSchema({
+  name: "Cloud Consulting",
+  description: "Maximize your business with tailored cloud solutions. IaaS, PaaS, SaaS, migration, infrastructure management.",
+  url: `${SITE_URL}/services/cloud-consulting`,
+});
 
 export default function CloudConsulting() {
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Cloud Consulting</h1>
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -32,6 +48,7 @@ export default function CloudConsulting() {
         </div>
       </div>
     </main>
+    </>
   );
 }
 

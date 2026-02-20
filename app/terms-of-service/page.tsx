@@ -1,15 +1,31 @@
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema, getFAQPageSchema } from "@/lib/structured-data";
+import { PAGE_FAQS } from "@/lib/page-faqs";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Terms of Service | Trigital Tech",
   description:
-    "Review Trigital Technologies Terms of Service to understand the terms and conditions governing your use of our services.",
-};
+    "Trigital Technologies Terms of Service: terms and conditions governing your use of our software, platform, and digital transformation services.",
+  keywords:
+    "terms of service, terms and conditions, service terms, user agreement, legal terms, terms of use, service agreement",
+  path: "/terms-of-service",
+});
+
+const termsSchema = createWebPageSchema({
+  name: "Terms of Service | Trigital Tech",
+  description: "Trigital Technologies Terms of Service: terms and conditions governing your use of our software, platform, and digital transformation services.",
+  path: "/terms-of-service",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Terms of Service", url: "/terms-of-service" }],
+});
 
 export default function TermsOfService() {
   return (
     <>
+      <JsonLd data={[termsSchema, getFAQPageSchema(PAGE_FAQS["/terms-of-service"])]} />
       <HeroSection
         title="Terms of Service"
         subtitle="Please read these terms carefully before using our services."
@@ -18,6 +34,9 @@ export default function TermsOfService() {
 
       <Section id="terms-content" className="bg-white dark:bg-slate-800">
         <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert">
+          <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            These Terms of Service govern your use of Trigital Technologies&apos; software, NIPIGE platform, cloud consulting, and digital transformation services. By accessing or using our services, you agree to these terms. We encourage you to read them thoroughly.
+          </p>
           <p className="text-gray-700 dark:text-gray-300 mb-6">
             <strong>Last Updated:</strong>{" "}
             {new Date().toLocaleDateString("en-US", {

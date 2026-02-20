@@ -30,12 +30,26 @@ import {
   ShoppingBagIcon,
   CloudIcon,
 } from "@heroicons/react/24/outline";
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Key Features | Trigital Tech",
   description:
-    "Explore NIPIGE key features: customized workflows, product catalogue, multi-channel integration, POS, localization, role management, billing, and more.",
-};
+    "NIPIGE key features: customized workflows, product catalogue, multi-channel integration, POS, localization, role management, billing.",
+  keywords:
+    "NIPIGE features, key features, platform features, customized workflows, product catalogue, multi-channel integration, POS integration, localization, role management, billing features, subscription features",
+  path: "/platform/key-features",
+});
+
+const schema = createWebPageSchema({
+  name: "Key Features | Trigital Tech",
+  description: "Explore NIPIGE key features: customized workflows, product catalogue, multi-channel integration, POS, localization, role management, billing.",
+  path: "/platform/key-features",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Platform", url: "/platform/our-platform-nipige" }, { name: "Key Features", url: "/platform/key-features" }],
+});
 
 export default function KeyFeatures() {
   const features = [
@@ -215,6 +229,8 @@ export default function KeyFeatures() {
   ];
 
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen">
       {/* —————————————————————————————————————————————————————————————
           1. HERO SECTION — Full-width dark blue, title + paragraph left, SVG right
@@ -380,5 +396,6 @@ export default function KeyFeatures() {
         </div>
       </section>
     </main>
+    </>
   );
 }

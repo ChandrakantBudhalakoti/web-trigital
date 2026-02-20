@@ -1,16 +1,30 @@
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { createWebPageSchema, getFAQPageSchema } from '@/lib/structured-data';
+import { PAGE_FAQS } from '@/lib/page-faqs';
+import { SITE_URL } from '@/lib/seo';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata = {
-  title: 'Sitemap | Trigital Tech',
+export const metadata = buildPageMetadata({
+  title: 'Sitemap | Trigital Tech - Products, Services & Navigation',
   description:
-    'Explore the complete sitemap of Trigital Technologies website. Find all our products, services, solutions, and company information.',
-};
+    'Explore the complete sitemap of Trigital Technologies. Find products, services, solutions, NIPIGE platform, and company information.',
+  keywords:
+    'sitemap, website map, site navigation, Trigital sitemap, website structure, page index',
+  path: '/site-map',
+});
 
-export default function Sitemap() {
-  const sitemapLinks = {
+const sitemapSchema = createWebPageSchema({
+  name: 'Sitemap | Trigital Tech',
+  description: 'Complete sitemap of Trigital Technologies. Products, services, solutions, NIPIGE platform, and company information.',
+  path: '/site-map',
+  breadcrumbs: [{ name: 'Home', url: SITE_URL }, { name: 'Sitemap', url: '/site-map' }],
+});
+
+const sitemapLinks = {
     'Products': [
       { label: 'Nipige', href: '/products/nipige' },
     ],
@@ -59,8 +73,10 @@ export default function Sitemap() {
     ],
   };
 
+export default function Sitemap() {
   return (
     <>
+      <JsonLd data={[sitemapSchema, getFAQPageSchema(PAGE_FAQS["/site-map"])]} />
       <HeroSection
         title="Sitemap"
         subtitle="Navigate through all sections of our website"
@@ -72,8 +88,14 @@ export default function Sitemap() {
         className="bg-white dark:bg-slate-800"
       >
         <div className="max-w-6xl mx-auto">
-          <p className="text-center text-gray-700 dark:text-gray-300 mb-12 text-lg">
-            Use this sitemap to quickly find and access any section of our website.
+          <p className="text-center text-gray-700 dark:text-gray-300 mb-4 text-lg max-w-3xl mx-auto leading-relaxed">
+            Use this sitemap to quickly find and access any section of our website. Trigital Technologies offers the NIPIGE platform, Trinovo ERP, solutions for subscription monetization and digital commerce, and services including cloud consulting, AI/ML, migration, and integration.
+          </p>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+            Browse by category below to explore our products, platform features, solutions, services, resources, and company information. Each link takes you directly to the relevant page. Products include Nipige for no-code digital commerce. Platform covers NIPIGE features, how it works, market solutions, and deployment models. Solutions span subscription monetization, digital commerce, engagement, and services. Our Services section lists cloud consultancy, migration, AI/ML, big data, app development, blockchain, and integration.
+          </p>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
+            Resources include blogs, documentation, and events. Company pages cover about us, customers, partners, and our team. Contact, FAQs, privacy policy, and terms of service are under General. Can&apos;t find what you need? Contact us for assistance or visit our FAQs page for common questions.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

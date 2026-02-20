@@ -1,10 +1,14 @@
 import ShareButton from '@/components/ShareButton';
 import Link from 'next/link';
 import Section from '@/components/Section';
+import JsonLd from '@/components/JsonLd';
 import { blogService, BlogPost } from '@/app/lib/api/blog-service';
 import { notFound } from 'next/navigation';
 import { headers } from 'next/headers';
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/seo';
+import { getArticleSchema } from '@/lib/structured-data';
+import { buildPageMetadata } from '@/lib/metadata';
 
 // Force dynamic rendering to ensure API calls are made on each request
 export const dynamic = 'force-dynamic';
@@ -37,40 +41,25 @@ function getImageUrl(post: BlogPost): string {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  
   try {
     const post = await blogService.getBlogBySlug(slug);
-    
     const title = post.seoTitle || post.title || 'Blog Post';
     const description = post.seoDescription || post.excerpt || 'Read our latest blog post';
-    const tags = post.tags || [];
-    
-    return {
+    const keywords = post.tags?.length ? post.tags.join(', ') : undefined;
+    return buildPageMetadata({
       title: `${title} | Trigital Tech Blog`,
       description,
-      keywords: tags.length > 0 ? tags.join(', ') : undefined,
-      openGraph: {
-        title,
-        description,
-        type: 'article',
-        images: post.featuredImage ? [post.featuredImage] : [],
-        tags: tags.length > 0 ? tags : undefined,
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title,
-        description,
-        images: post.featuredImage ? [post.featuredImage] : [],
-      },
-      other: tags.length > 0 ? {
-        'article:tag': tags.join(', '),
-      } : {},
-    };
-  } catch (error) {
-    return {
+      keywords,
+      path: `/resources/blogs/${slug}`,
+      image: post.featuredImage,
+      type: 'article',
+    });
+  } catch {
+    return buildPageMetadata({
       title: 'Post Not Found | Trigital Tech',
       description: 'The blog post you are looking for could not be found.',
-    };
+      path: `/resources/blogs/${slug}`,
+    });
   }
 }
 
@@ -179,8 +168,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     );
   };
 
+  const articleUrl = `${SITE_URL}/resources/blogs/${slug}`;
+  const published = post.publishDate || new Date().toISOString().split('T')[0];
+  const articleSchema = getArticleSchema({
+    headline: post.title,
+    description: post.seoDescription || post.excerpt || 'Trigital Tech blog article.',
+    url: articleUrl,
+    image: post.featuredImage,
+    datePublished: published,
+    dateModified: published,
+    authorName: post.author,
+  });
+
   return (
     <>
+      <JsonLd data={articleSchema} />
       {/* Breadcrumb */}
       <Section className="border-b border-gray-200 dark:border-gray-700 py-4">
         <div className="max-w-7xl mx-auto ">

@@ -1,11 +1,27 @@
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { getServiceSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "Custom Software Development | Trigital Tech",
   description:
-    "Get tailored software solutions built to your specific business needs. Full-stack development, web and mobile applications, and enterprise solutions.",
-};
+    "Tailored software solutions for your business. Full-stack, web, mobile, and enterprise development. Trigital custom software experts.",
+  keywords:
+    "custom software development, bespoke software, tailored software solutions, full-stack development, web application development, mobile app development, enterprise software development",
+  path: "/services/custom-development",
+});
+
+const schema = getServiceSchema({
+  name: "Custom Software Development",
+  description: "Tailored software solutions built to your business needs. Full-stack, web, mobile, enterprise solutions.",
+  url: `${SITE_URL}/services/custom-development`,
+});
 
 export default function CustomDevelopment() {
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Custom Software Development</h1>
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -32,6 +48,7 @@ export default function CustomDevelopment() {
         </div>
       </div>
     </main>
+    </>
   );
 }
 

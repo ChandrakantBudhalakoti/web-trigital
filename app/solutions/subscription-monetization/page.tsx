@@ -1,11 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { getServiceSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Subscription Monetization | Trigital Tech",
   description:
-    "Boost subscriber acquisition and retention with Trigital's subscription monetization solutions. Advanced analytics, flexible billing, and revenue optimization for digital media and retail.",
-};
+    "Boost subscriber acquisition and retention. Advanced analytics, flexible billing, revenue optimization for digital media and retail.",
+  keywords:
+    "subscription monetization, subscriber acquisition, subscription retention, subscription billing, revenue optimization, subscription analytics, digital media subscriptions, subscription management",
+  path: "/solutions/subscription-monetization",
+});
+
+const schema = getServiceSchema({
+  name: "Subscription Monetization",
+  description: "Boost subscriber acquisition and retention. Advanced analytics, flexible billing, revenue optimization for digital media and retail.",
+  url: `${SITE_URL}/solutions/subscription-monetization`,
+});
 
 export default function SubscriptionMonetization() {
   const sections = [
@@ -159,6 +172,8 @@ export default function SubscriptionMonetization() {
   ];
 
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen">
       {/* —————————————————————————————————————————————————————————————
           1. HERO SECTION — Full-width dark blue/indigo, title + paragraph left, illustration right
@@ -306,5 +321,6 @@ export default function SubscriptionMonetization() {
         </div>
       </section>
     </main>
+    </>
   );
 }

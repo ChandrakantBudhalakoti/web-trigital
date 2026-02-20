@@ -668,8 +668,10 @@ html.dark .blog-content li::marker {
   margin: 1.5rem 0;
 }
 
-.dark .blog-content pre {
-  background-color: #1f2937;
+@media (prefers-color-scheme: dark) {
+  .blog-content pre {
+    background-color: #1f2937;
+  }
 }
 
 .blog-content pre code {

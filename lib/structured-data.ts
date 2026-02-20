@@ -234,3 +234,62 @@ export function getHomePageSchema(): JsonLd {
     url: SITE_URL,
   });
 }
+
+/** WebPage schema factory - use for any content page. path e.g. "/services" or "/company/about-us" */
+export function createWebPageSchema(params: {
+  name: string;
+  description: string;
+  path: string;
+  breadcrumbs?: { name: string; url: string }[];
+}): JsonLd {
+  const p = params.path.startsWith("/") ? params.path : `/${params.path}`;
+  const url = `${SITE_URL}${p}`;
+  const breadcrumbs = params.breadcrumbs?.map((b) => ({
+    name: b.name,
+    url: b.url.startsWith("http") ? b.url : `${SITE_URL}${b.url.startsWith("/") ? b.url : `/${b.url}`}`,
+  }));
+  return getWebPageSchema({ name: params.name, description: params.description, url, breadcrumbs });
+}
+
+/** Article schema for blog posts */
+export function getArticleSchema(params: {
+  headline: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+}): JsonLd {
+  const {
+    headline,
+    description,
+    url,
+    image,
+    datePublished,
+    dateModified,
+    authorName = ORGANIZATION.name,
+  } = params;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    url,
+    image: image ?? ORGANIZATION.logo,
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    author: {
+      "@type": "Organization",
+      name: authorName,
+      "@id": `${SITE_URL}/#organization`,
+    },
+    publisher: {
+      "@id": `${SITE_URL}/#organization`,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  };
+}

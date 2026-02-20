@@ -1,184 +1,183 @@
-import Section from "@/components/Section";
-import {
-  BookOpenIcon,
-  CodeBracketIcon,
-  LinkIcon,
-  CloudArrowUpIcon,
-  ShieldCheckIcon,
-  WrenchScrewdriverIcon,
-  VideoCameraIcon,
-  UsersIcon,
-  ArrowTopRightOnSquareIcon,
-} from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
 
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "Documentation | Trigital Tech",
   description:
     "Technical documentation, API reference, integration guides, deployment, and troubleshooting for Trigital products and platforms.",
-};
+  keywords:
+    "documentation, API documentation, technical guides, integration guides, deployment guides, troubleshooting, developer documentation, API reference, Trigital documentation, product documentation, implementation guide, developer guide",
+  path: "/resources/documentation",
+});
 
-type DocSectionKey =
-  | "Getting Started"
-  | "API Reference"
-  | "Integration Guides"
-  | "Deployment"
-  | "Security"
-  | "Troubleshooting";
+const schema = createWebPageSchema({
+  name: "Documentation | Trigital Tech",
+  description: "Technical documentation, API reference, integration guides, deployment, troubleshooting for Trigital products and platforms.",
+  path: "/resources/documentation",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Resources", url: "/resources/blogs" }, { name: "Documentation", url: "/resources/documentation" }],
+});
 
-const docSections: { title: DocSectionKey; icon: any }[] = [
-  { title: "Getting Started", icon: BookOpenIcon },
-  { title: "API Reference", icon: CodeBracketIcon },
-  { title: "Integration Guides", icon: LinkIcon },
-  { title: "Deployment", icon: CloudArrowUpIcon },
-  { title: "Security", icon: ShieldCheckIcon },
-  { title: "Troubleshooting", icon: WrenchScrewdriverIcon },
+const services = [
+  {
+    title: "Product Document",
+    description:
+      "As part of our product documentation strategy is a plan for creating, publishing, and maintaining user guides and other resources. It ensures that our documentation supports the product and business goals. Key elements include defining the audience and goals, choosing content formats, establishing development and maintenance processes, utilizing tools, and measuring and improving from time to time. Consider accessibility, localization, and search functionality for an optimal user experience.",
+    bullets: [] as string[],
+    image: "/assets/images/Nipige/product_Documentation.svg",
+  },
+  {
+    title: "Developers Guide",
+    description:
+      "Our developer guidelines are a set of principles like Coding standards, Security best practices, Version control usage, testing guidelines, Documentation guidelines and finally API usage guidelines that help developers write high-quality, consistent, and maintainable code. They promote efficient development, collaboration, and a better product. By following these guidelines, developers can create code that is easier to understand, maintain, and test.",
+    bullets: [] as string[],
+    image: "/assets/images/Nipige/developers_Guide_.svg",
+  },
+  {
+    title: "Implementation Guide",
+    description:
+      "Our implementation guide is a roadmap for achieving improved performance. It outlines the steps and methods for putting a plan into action by",
+    bullets: [
+      "Set clear and measurable goals and identify KPIs to track progress.",
+      "Break down the overall strategy into actionable steps and assign ownership for each step.",
+      "Develop a realistic timeline with regular checkpoints to track progress.",
+      "Develop a communication plan and secure necessary resources for successful implementation.",
+      "Continuously monitor progress, evaluate effectiveness, and make adjustments as needed.",
+    ],
+    image: "/assets/images/Nipige/implementation_Guide_.svg",
+  },
 ];
-
-const docDataMap: Record<DocSectionKey, string[]> = {
-  "Getting Started": ["Installation Guide", "Configuration", "First Steps"],
-  "API Reference": ["Authentication", "Endpoints", "Webhooks", "SDK Reference"],
-  "Integration Guides": [
-    "Salesforce Integration",
-    "SAP Integration",
-    "Custom APIs",
-  ],
-  Deployment: ["Cloud Deployment", "On-Premise Setup", "Hybrid Models"],
-  Security: ["Authentication", "Data Protection", "Compliance"],
-  Troubleshooting: ["FAQ", "Error Codes", "Performance Tuning"],
-};
 
 export default function Documentation() {
   return (
-    <main className="min-h-screen bg-[#071120] text-white">
-      <Section>
-        <div className="space-y-24 py-16">
-          {/* HERO */}
-          <div className="text-center space-y-6">
-            <h1 className="text-6xl font-black tracking-tight text-primary">
-              Documentation
-            </h1>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              Explore our guides, tutorials, and API documentation.
-            </p>
-          </div>
-
-          {/* DOC GRID */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {docSections.map(({ title, icon: Icon }) => (
-              <div
-                key={title}
-                className="
-                  rounded-xl p-8 bg-white/5 border border-white/10
-                  backdrop-blur-xl shadow-[0_0_15px_-4px_rgba(0,0,0,.5)]
-                  hover:bg-white/10 hover:shadow-[0_0_25px_-2px_rgba(0,0,0,.6)]
-                  hover:-translate-y-1 transition-all duration-300
-                "
-              >
-                <Icon className="w-10 h-10 text-blue-400" />
-
-                <h3 className="text-xl font-bold text-blue-300 mt-4">
-                  {title}
-                </h3>
-
-                <div className="space-y-2 mt-6">
-                  {docDataMap[title].map((link) => (
-                    <a
-                      key={link}
-                      href="#"
-                      className="flex items-center gap-1 text-sm text-primary hover:text-secondary transition"
-                    >
-                      ↳ {link}
-                      <ArrowTopRightOnSquareIcon className="w-4 h-4" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* HELP SECTION */}
-          <div
-            className="
-              bg-white/5 border border-white/10 rounded-2xl p-12 
-              backdrop-blur-xl shadow-xl space-y-10
-            "
-          >
-            <h2 className="text-3xl font-bold text-center text-primary">
-              Need Help?
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div
-                className="
-                  rounded-xl bg-white/5 border border-white/10 p-6
-                  shadow-md hover:shadow-xl hover:-translate-y-1 transition-all
-                "
-              >
-                <VideoCameraIcon className="w-8 h-8 text-blue-400" />
-                <h3 className="text-lg font-bold text-blue-300 mt-3">
-                  Video Tutorials
-                </h3>
-                <p className="text-white/70 mt-2">
-                  Step-by-step tutorials for faster learning.
-                </p>
-                <a href="#" className="btn btn-outline btn-primary mt-4">
-                  Watch Videos
-                </a>
-              </div>
-
-              <div
-                className="
-                  rounded-xl bg-white/5 border border-white/10 p-6
-                  shadow-md hover:shadow-xl hover:-translate-y-1 transition-all
-                "
-              >
-                <UsersIcon className="w-8 h-8 text-blue-400" />
-                <h3 className="text-lg font-bold text-blue-300 mt-3">
-                  Community Forum
-                </h3>
-                <p className="text-white/70 mt-2">
-                  Ask questions and collaborate with developers.
-                </p>
-                <a href="#" className="btn btn-outline btn-primary mt-4">
-                  Join Forum
-                </a>
-              </div>
+    <>
+      <JsonLd data={schema} />
+    <main className="min-h-screen">
+      {/* ============================================
+          1️⃣ HERO SECTION
+          ============================================ */}
+      <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Documentation
+              </h1>
+              <p className="text-gray-200 mt-4 max-w-xl leading-relaxed">
+                Explore our comprehensive guides, tutorials, and API
+                documentation. Find everything you need to get started,
+                integrate our platforms, and troubleshoot issues with detailed
+                technical documentation and best practices.
+              </p>
             </div>
-          </div>
 
-          {/* CTA */}
-          <div className="text-center space-y-6">
-            <h2 className="text-3xl font-bold text-primary">
-              Can’t find what you're looking for?
-            </h2>
-
-            <div className="flex gap-6 justify-center flex-wrap pt-2">
-              <a
-                href="/contact-us"
-                className="
-                  px-10 py-3 rounded-full text-white bg-blue-600 
-                  
-                  hover:bg-blue-500 hover:-translate-y-1 
-                  transition-all duration-300 font-semibold
-                "
-              >
-                Contact Support
-              </a>
-
-              <a
-                href="/resources/blogs"
-                className="
-                  px-10 py-3 rounded-full border border-white/30 text-white 
-                  hover:border-blue-500 hover:text-blue-400 hover:-translate-y-1 
-                  transition-all duration-300
-                "
-              >
-                Read Blog Posts
-              </a>
+            <div className="relative w-full h-[400px] md:h-[450px]">
+              <Image
+                src="/assets/images/Nipige/documentation.svg"
+                alt="Documentation"
+                fill
+                className="object-contain rounded-2xl"
+                priority
+              />
             </div>
           </div>
         </div>
-      </Section>
+      </section>
+
+      {/* ============================================
+          2️⃣ SERVICE CONTENT SECTIONS
+          Alternating background bands
+          ============================================ */}
+      {services.map((service, index) => {
+        const isEven = index % 2 === 0;
+        const bgClass = isEven ? "bg-white" : "bg-[#EBF7FF]";
+
+        return (
+          <section key={service.title} className={`${bgClass} py-20`}>
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="md:grid md:grid-cols-2 gap-12 items-center">
+                {!isEven && (
+                  <div className="relative w-full h-[350px] mb-8 md:mb-0 order-2 md:order-1">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-contain rounded-2xl shadow-md"
+                    />
+                  </div>
+                )}
+
+                {/* Text Content */}
+                <div className={`${isEven ? "md:order-1" : "md:order-2"}`}>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+                    {service.title}
+                  </h2>
+                  <p className="text-gray-600 mt-4 leading-relaxed">
+                    {service.description}
+                  </p>
+                  {service.bullets && service.bullets.length > 0 && (
+                    <ul className="mt-6 space-y-3 text-gray-600 list-disc list-inside">
+                      {service.bullets.map((bullet, bulletIndex) => (
+                        <li key={bulletIndex}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                {/* Image - Right for even sections */}
+                {isEven && (
+                  <div className="relative w-full h-[350px] mt-8 md:mt-0 order-2">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-contain rounded-2xl shadow-md"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* ============================================
+          3️⃣ CTA SECTION
+          ============================================ */}
+      <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center space-y-6 flex flex-col items-center">
+            <h2 className="text-3xl font-bold text-white">
+              Can&apos;t find what you&apos;re looking for?
+            </h2>
+            <p className="text-gray-200 max-w-2xl leading-relaxed">
+              Our support team is here to help. Contact us for assistance or
+              explore our blog for additional resources and updates.
+            </p>
+
+            <div className="flex gap-6 justify-center flex-wrap">
+              <Link
+                href="/contact-us"
+                className="px-10 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 transition font-semibold text-white"
+              >
+                Contact Support
+              </Link>
+
+              <Link
+                href="/resources/blogs"
+                className="px-10 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 transition font-semibold text-white"
+              >
+                Read Blog Posts
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    </>
   );
 }

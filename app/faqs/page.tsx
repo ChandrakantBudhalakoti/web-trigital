@@ -15,13 +15,23 @@ export default function FAQs() {
   return (
     <>
       <HeroSection
-        title="Frequently Asked Questions"
-        subtitle="Everything you need to know about our services & platforms"
+        title="FAQs"
+        subtitle="Frequently asked questions about our services & platforms"
         backgroundClass="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900"
       />
 
       <Section id="faqs" className="bg-white dark:bg-slate-900">
         <div className="max-w-5xl mx-auto space-y-16">
+          <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
+            Find answers to common questions about Trigital&apos;s software development services, NIPIGE platform, cloud hosting, and digital transformation solutions. Our FAQs cover services, products, cloud infrastructure, and support.
+          </p>
+          <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6">
+            Can&apos;t find what you need? Our support team is available to help. Use the contact form or email us directly at info@trigital.in for personalized assistance with pricing, technical requirements, or implementation timelines.
+          </p>
+          <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-8">
+            Trigital offers the NIPIGE no-code/low-code platform for rapid digital product development, Trinovo ERP for enterprise operations, and consulting services in cloud, AI/ML, migration, and integration. Our solutions serve e-commerce, telecom, utilities, media, and healthcare. Browse the categories below for detailed answers on platform features, pricing models, deployment options, and how we can support your digital transformation journey.
+          </p>
+
           {faqs.map((category, categoryIdx) => (
             <div key={categoryIdx}>
               {/* Category Header */}
@@ -74,9 +84,9 @@ export default function FAQs() {
         className="bg-slate-50 dark:bg-slate-950"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
+          <h2 className="text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
             Still have questions?
-          </h3>
+          </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
             Our team is happy to help you with anything you need.
           </p>

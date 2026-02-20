@@ -1,11 +1,27 @@
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { getServiceSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "AI & Machine Learning | Trigital Tech",
   description:
-    "Transform your business with transformative AI and ML solutions. Predictive analytics, natural language processing, data mining, and intelligent automation services.",
-};
+    "AI and ML solutions: predictive analytics, NLP, computer vision, intelligent automation. Transform your business with Trigital.",
+  keywords:
+    "AI services, machine learning services, artificial intelligence, predictive analytics, natural language processing, NLP, computer vision, deep learning, ML solutions, AI consulting",
+  path: "/services/ai-ml",
+});
+
+const schema = getServiceSchema({
+  name: "AI & Machine Learning",
+  description: "Transform your business with AI and ML solutions. Predictive analytics, NLP, computer vision, intelligent automation.",
+  url: `${SITE_URL}/services/ai-ml`,
+});
 
 export default function AIML() {
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">AI & Machine Learning</h1>
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -33,6 +49,7 @@ export default function AIML() {
         </div>
       </div>
     </main>
+    </>
   );
 }
 

@@ -2,66 +2,28 @@ import Section from "@/components/Section";
 import TestimonialCarousel from "@/components/TestimonialCard";
 import Link from "next/link";
 import Image from "next/image";
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema, getFAQPageSchema } from "@/lib/structured-data";
+import { PAGE_FAQS } from "@/lib/page-faqs";
+import { SITE_URL } from "@/lib/seo";
+import { customers } from "@/lib/customers-data";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  title: "Our Customers | Trigital Tech",
+export const metadata = buildPageMetadata({
+  title: "Our Customers | Trigital Tech - Success Stories & Case Studies",
   description:
-    "Discover the success stories of our satisfied customers and how Trigital has transformed their businesses.",
-};
+    "Customer success stories: see how Trigital has transformed businesses with software, NIPIGE platform, cloud, and digital transformation solutions.",
+  keywords:
+    "Trigital customers, customer success stories, client testimonials, satisfied customers, business transformation, customer case studies, client portfolio",
+  path: "/company/customers",
+});
 
-const customers = [
-  {
-    name: "NXTDIGITAL Limited",
-    country: "India",
-    description:
-      "The flagship media business of the global Hinduja Group with pan-India presence.",
-    result:
-      "Delivered television services platform with improved billing and customer management.",
-    logo: "/assets/images/Nipige/nxt_logo.png",
-  },
-  {
-    name: "Telkom South Africa",
-    country: "India",
-    description:
-      "Leading telecommunications provider with operations in 38 African nations.",
-    result: "Developed and deployed feature-rich Lions Mobile App Phase I.",
-    logo: "/assets/images/Nipige/telkom_logo.svg",
-  },
-  {
-    name: "Tayana Mobility Technologies",
-    country: "India",
-    description:
-      "Leading telecom software products company serving communication service providers worldwide.",
-    result: "3GPP-compliant digital BSS and network management solutions.",
-    logo: "/assets/images/Nipige/tayana_logo.svg",
-  },
-  {
-    name: "5Factors",
-    country: "India",
-    description:
-      "Risk intelligence company dedicated to cyber and fraud risk management.",
-    result:
-      "AI-driven solutions with real-time visibility and threat detection.",
-    logo: "/assets/images/Nipige/5factorsIcon.png",
-  },
-  {
-    name: "Fastway Group",
-    country: "India",
-    description:
-      "Pioneer in digital entertainment services and dominant market leader in the region.",
-    result:
-      "Enhanced platform for digital entertainment and internet services.",
-    logo: "/assets/images/Nipige/fastway_logo.png",
-  },
-  {
-    name: "AP State FiberNet Limited",
-    country: "India",
-    description:
-      "Government of AP entity for telecom infrastructure development.",
-    result: "Advanced network management and digital services platform.",
-    logo: "/assets/images/Nipige/apsfl_logo.jpg",
-  },
-];
+const customersSchema = createWebPageSchema({
+  name: "Our Customers | Trigital Tech",
+  description: "Customer success stories: see how Trigital has transformed businesses with software, NIPIGE platform, cloud, and digital transformation solutions.",
+  path: "/company/customers",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Company", url: "/company/about-us" }, { name: "Customers", url: "/company/customers" }],
+});
 
 const testimonials = [
   {
@@ -87,32 +49,35 @@ const testimonials = [
 export default function Customers() {
   return (
     <>
-      {/* HERO SECTION — Same as key-features: title + paragraph left, banner image right */}
-      <section className="w-full bg-gradient-to-r from-indigo-900 via-blue-900 to-indigo-800 py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <JsonLd data={[customersSchema, getFAQPageSchema(PAGE_FAQS["/company/customers"])]} />
+      {/* HERO SECTION — Dark blue with customer_top_Banner.svg as background (right) */}
+      <section
+        className="relative w-full bg-[#0B3C91] text-white py-16 md:py-24"
+        style={{
+          backgroundImage:
+            "url('/assets/images/Nipige/customer_top_Banner.svg')",
+          backgroundPosition: "right center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Gradient overlay for text readability */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#0B3C91] via-[#0B3C91]/95 to-transparent md:via-[#0B3C91]/85"
+          aria-hidden
+        />
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white">
-                Customers
-              </h1>
-              <p className="text-gray-200 mt-4 max-w-xl leading-relaxed">
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold">Customers</h1>
+              <p className="text-gray-200 mt-4 max-w-xl leading-relaxed mx-auto md:mx-0">
                 Empower your business with Trigital Platform. Say goodbye to
-                time-consuming tasks and hello to data-based efficiency. Join
-                our satisfied customers who have transformed their workflow with
-                Trigital. Unleash success today.
+                time-consuming tasks and hello to streamlined efficiency. Join
+                our satisfied customers who have transformed their workflows
+                with Trigital. Unlock success today.
               </p>
             </div>
-            <div className="flex justify-center md:justify-end">
-              <div className="relative w-full max-w-lg aspect-[4/3]">
-                <Image
-                  src="/assets/images/Nipige/customer_top_banner.jpg"
-                  alt="Our customers"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </div>
+            <div className="hidden md:block" aria-hidden />
           </div>
         </div>
       </section>
@@ -126,10 +91,13 @@ export default function Customers() {
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 dark:text-white text-center mb-4">
             Our Platform Customers
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 text-center mb-4 max-w-2xl mx-auto leading-relaxed">
             Discover the stories of our satisfied customers who have found
-            success with our solutions. Hear firsthand how our products/services
+            success with our solutions. Hear firsthand how our products and services
             have transformed their businesses.
+          </p>
+          <p className="text-gray-500 dark:text-gray-500 text-center mb-12 max-w-2xl mx-auto text-sm leading-relaxed">
+            From telecom and utilities to e-commerce and healthcare, our clients span multiple industries. Each case study highlights the challenges we addressed and the outcomes achieved with our NIPIGE platform and digital solutions.
           </p>
 
           {/* Customer Cards Grid */}
@@ -182,9 +150,12 @@ export default function Customers() {
                 </div>
 
                 {/* View More Button */}
-                <button className="w-full mt-4 border-2 border-orange-500 text-orange-500 bg-white dark:bg-slate-800 dark:text-orange-400 dark:border-orange-500 rounded-lg py-2 px-4 font-medium hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
+                <Link
+                  href={`/company/customers/${customer.slug}`}
+                  className="block w-full mt-4 text-center border-2 border-orange-500 text-orange-500 bg-white dark:bg-slate-800 dark:text-orange-400 dark:border-orange-500 rounded-lg py-2 px-4 font-medium hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors"
+                >
                   View More
-                </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -194,6 +165,9 @@ export default function Customers() {
       {/* IMPACT METRICS SECTION */}
       <Section id="impact" className="bg-[#EBF7FF] dark:bg-slate-800 py-20">
         <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">
+            Impact Metrics
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { metric: "50+", label: "Satisfied Customers" },

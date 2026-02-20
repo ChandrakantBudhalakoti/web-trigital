@@ -6,52 +6,71 @@ Trigital Technologies is a leading SaaS-based software development company provi
 ## Website Structure
 
 ### Main Pages
-- Home: https://trigital.in/
-- Contact Us: https://trigital.in/contact-us
-- FAQs: https://trigital.in/faqs
-- Privacy Policy: https://trigital.in/privacy-policy
-- Terms of Service: https://trigital.in/terms-of-service
+- Home: https://www.trigital.in/
+- Contact Us: https://www.trigital.in/contact-us
+- FAQs: https://www.trigital.in/faqs
+- Privacy Policy: https://www.trigital.in/privacy-policy
+- Terms of Service: https://www.trigital.in/terms-of-service
 - Sitemap: https://www.trigital.in/sitemap.xml
 - Human sitemap: https://www.trigital.in/site-map
 
 ### Company
-- About Us: https://trigital.in/company/about-us
-- Customers: https://trigital.in/company/customers
-- Our Team: https://trigital.in/company/our-team
-- Partners: https://trigital.in/company/partners
+- About Us: https://www.trigital.in/company/about-us
+- Customers: https://www.trigital.in/company/customers
+- Our Team: https://www.trigital.in/company/our-team
+- Partners: https://www.trigital.in/company/partners
+- NXTDIGITAL Limited: https://www.trigital.in/company/customers/nxtdigital-limited
+- Telkom South Africa: https://www.trigital.in/company/customers/telkom-south-africa
+- Tayana Mobility Technologies: https://www.trigital.in/company/customers/tayana-mobility-technologies
+- 5Factors: https://www.trigital.in/company/customers/5factors
+- AZA: https://www.trigital.in/company/customers/aza
+- LIRS: https://www.trigital.in/company/customers/lirs
+- TEKA: https://www.trigital.in/company/customers/teka
+- CALONEX: https://www.trigital.in/company/customers/calonex
+- POLIMERAAS: https://www.trigital.in/company/customers/polimeraas
+- FREE TV: https://www.trigital.in/company/customers/free-tv
+- Fastway Group: https://www.trigital.in/company/customers/fastway-group
+- AP State FiberNet Limited: https://www.trigital.in/company/customers/ap-state-fibernet-limited
 
 ### Services
-- Custom Software Development: https://trigital.in/services/custom-development
-- Cloud Consulting: https://trigital.in/services/cloud-consulting
-- AI/ML Services: https://trigital.in/services/ai-ml
-- AI/ML Consulting: https://trigital.in/services/ai-ml-consulting
-- Big Data Analytics: https://trigital.in/services/big-data-analytics
-- Big Data: https://trigital.in/services/big-data
-- Blockchain: https://trigital.in/services/blockchain
-- App Development: https://trigital.in/services/app-development
-- Integration: https://trigital.in/services/integration
-- Migration Services: https://trigital.in/services/migration-services
+- All Services: https://www.trigital.in/services
+- Custom Software Development: https://www.trigital.in/services/custom-development
+- Cloud Consultancy: https://www.trigital.in/services/cloud-consultancy
+- Cloud Consulting: https://www.trigital.in/services/cloud-consulting
+- AI/ML Services: https://www.trigital.in/services/ai-ml
+- AI/ML Consulting: https://www.trigital.in/services/ai-ml-consulting
+- Big Data Analytics: https://www.trigital.in/services/big-data-analytics
+- Big Data: https://www.trigital.in/services/big-data
+- Blockchain: https://www.trigital.in/services/blockchain
+- App Development: https://www.trigital.in/services/app-development
+- Integration: https://www.trigital.in/services/integration
+- Migration Services: https://www.trigital.in/services/migration-services
 
 ### Products
-- NIPIGE: https://trigital.in/products/nipige
+- NIPIGE: https://www.trigital.in/products/nipige
+- Trinovo: https://www.trigital.in/products/trinovo
+- Trinovo Advantages: https://www.trigital.in/products/trinovo/advantages
+- Trinovo Technology: https://www.trigital.in/products/trinovo/technology
+- Trinovo Modules: https://www.trigital.in/products/trinovo/modules
 
 ### Platform (NIPIGE)
-- Our Platform NIPIGE: https://trigital.in/platform/our-platform-nipige
-- How It Works: https://trigital.in/platform/how-it-works
-- Key Features: https://trigital.in/platform/key-features
-- Market Solution: https://trigital.in/platform/market-solution
-- Deployment Model: https://trigital.in/platform/deployment-model
+- Our Platform NIPIGE: https://www.trigital.in/platform/our-platform-nipige
+- How It Works: https://www.trigital.in/platform/how-it-works
+- Key Features: https://www.trigital.in/platform/key-features
+- Market Solution: https://www.trigital.in/platform/market-solution
+- Deployment Model: https://www.trigital.in/platform/deployment-model
 
 ### Solutions
-- Digital Commerce: https://trigital.in/solutions/digital-commerce
-- Digital Engagement: https://trigital.in/solutions/digital-engagement
-- Digital Service: https://trigital.in/solutions/digital-service
-- Subscription Monetization: https://trigital.in/solutions/subscription-monetization
+- Digital Commerce: https://www.trigital.in/solutions/digital-commerce
+- Digital Engagement: https://www.trigital.in/solutions/digital-engagement
+- Digital Service: https://www.trigital.in/solutions/digital-service
+- Subscription Monetization: https://www.trigital.in/solutions/subscription-monetization
 
 ### Resources
-- Blogs: https://trigital.in/resources/blogs
-- Documentation: https://trigital.in/resources/documentation
-- Events & News: https://trigital.in/resources/events-news
+- Blogs: https://www.trigital.in/resources/blogs
+- Documentation: https://www.trigital.in/resources/documentation
+- Events & News: https://www.trigital.in/resources/events-news
+- Blog posts: https://www.trigital.in/resources/blogs/[slug] (dynamic; see sitemap.xml for current list)
 
 ## Contact Information
 - Email: info@trigital.in
@@ -77,6 +96,7 @@ Trigital Technologies is a leading SaaS-based software development company provi
 
 ## Products
 - NIPIGE: Low-code/no-code digital enablement platform built on microservices architecture for rapid SaaS product development
+- Trinovo: ERP and business management platform
 
 ## Content
 The website includes blog posts, documentation, and resources covering topics such as:

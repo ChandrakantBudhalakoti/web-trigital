@@ -3,19 +3,12 @@ import Section from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
 import { getContactPageSchema, getLocalBusinessSchema } from "@/lib/structured-data";
-
 import {
   MapPinIcon,
   EnvelopeIcon,
   PhoneIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-
-export const metadata = {
-  title: "Contact Us | Trigital Tech",
-  description:
-    "Contact Trigital Technologies for expert software development, cloud consulting, AI/ML solutions, and digital transformation services. Reach out via phone, email, or visit our Hyderabad office. We're here to help transform your business with cutting-edge technology solutions.",
-};
 
 interface ContactUsProps {
   searchParams: Promise<{ source?: string }>;
@@ -28,15 +21,27 @@ export default async function ContactUs({ searchParams }: ContactUsProps) {
     <>
       <JsonLd data={[getContactPageSchema(), getLocalBusinessSchema()]} />
       <HeroSection
-        title="Get in Touch"
+        title="Contact Us"
         subtitle="We're here to help you with your digital transformation journey"
         backgroundClass="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900"
       />
 
       <Section id="contact-content" className="bg-slate-900 py-20 px-4">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-gray-300 text-lg mb-6 max-w-3xl leading-relaxed">
+            Reach out to Trigital Technologies for software development, cloud consulting, AI/ML solutions, and digital transformation. Our team is ready to discuss your project, schedule a demo, or answer questions about our NIPIGE platform and services.
+          </p>
+          <p className="text-gray-400 text-base mb-6 max-w-3xl leading-relaxed">
+            Located in Hyderabad, we serve clients across India and globally. Whether you need a product demo, technical consultation, or partnership inquiry, we respond within 24 hours on business days.
+          </p>
+          <p className="text-gray-400 text-base mb-12 max-w-3xl leading-relaxed">
+            Trigital has been helping enterprises digitize since 2013. Our NIPIGE platform powers subscription billing, e-commerce, and B2B marketplaces. Our Trinovo ERP streamlines finance, procurement, and operations. For cloud migration, AI/ML consulting, or custom development, get in touch. Use the form below or reach us by phone and email. We welcome site visits by appointment.
+          </p>
+        </div>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 mt-8">
           {/* Contact Information */}
           <div className="space-y-10 text-gray-300">
+            <h2 className="text-2xl font-semibold mb-6 text-white">Contact Information</h2>
             {/* Address */}
             <div>
               <h3 className="text-lg font-semibold mb-2 flex items-center gap-2 text-white">
@@ -128,7 +133,10 @@ export default async function ContactUs({ searchParams }: ContactUsProps) {
 
       {/* Map Section */}
       <Section id="map" className="bg-gray-50 dark:bg-slate-900">
-        <h2 className="text-3xl font-bold text-center mb-8">Find Us</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">Find Us</h2>
+        <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-8 leading-relaxed">
+          Our office is in Hyderabad Knowledge City, Serilingampally. We are easily accessible from Gachibowli and HITEC City. Parking is available on-site. For directions, use the map below or contact us for detailed instructions.
+        </p>
         <div className="aspect-video bg-base-300 rounded-lg overflow-hidden">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3806.9452445851494!2d78.5364554751655!3d17.416138412292092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDI0JzU4LjEiTiA3OMKwMzInMjAuNSJF!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"

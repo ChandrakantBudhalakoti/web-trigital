@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
 import {
   UserPlusIcon,
   Cog6ToothIcon,
@@ -7,11 +11,21 @@ import {
   ChartBarIcon,
 } from "@heroicons/react/24/outline";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "How It Works | Trigital Tech",
   description:
-    "Get started with NIPIGE in four steps: sign up, configure, beta launch, and grow. Learn how Trigital's platform accelerates your digital product development.",
-};
+    "Get started with NIPIGE: sign up, configure, beta launch, grow. How Trigital's platform accelerates digital product development.",
+  keywords:
+    "how NIPIGE works, platform setup, sign up, configure platform, beta launch, digital product development, platform onboarding, getting started",
+  path: "/platform/how-it-works",
+});
+
+const schema = createWebPageSchema({
+  name: "How It Works | Trigital Tech",
+  description: "Get started with NIPIGE in four steps: sign up, configure, beta launch, and grow.",
+  path: "/platform/how-it-works",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Platform", url: "/platform/our-platform-nipige" }, { name: "How It Works", url: "/platform/how-it-works" }],
+});
 
 export default function HowItWorks() {
   const processSteps = [
@@ -73,6 +87,8 @@ export default function HowItWorks() {
   ];
 
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen">
       {/* —————————————————————————————————————————————————————————————
           1. HERO SECTION — Full-width dark blue, title + paragraph left, gears SVG right
@@ -217,5 +233,6 @@ export default function HowItWorks() {
         </div>
       </section>
     </main>
+    </>
   );
 }

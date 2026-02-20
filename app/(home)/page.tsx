@@ -22,90 +22,9 @@ import {
   MagnifyingGlassIcon,
   CubeIcon,
   ArrowRightIcon,
-  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
-import HeroSection from "@/components/HeroSection";
-import ServiceCard from "@/components/ServiceCard";
 import FeatureCard from "@/components/FeatureCard";
 import Section from "@/components/Section";
-
-const services = [
-  {
-    icon: <Cog6ToothIcon className="w-12 h-12 text-primary" />,
-    title: "Custom Software Development",
-    description:
-      "Tailored software solutions built to your specific business needs.",
-    features: [
-      "Full-stack development",
-      "Web and mobile applications",
-      "Enterprise solutions",
-      "API development",
-    ],
-    link: "/services/custom-development",
-  },
-  {
-    icon: <CloudIcon className="w-12 h-12 text-primary" />,
-    title: "Cloud Consulting Services",
-    description:
-      "Maximize your business potential with tailored cloud solutions.",
-    features: [
-      "IaaS, PaaS, SaaS optimization",
-      "Cloud migration",
-      "Infrastructure management",
-      "Cost optimization",
-    ],
-    link: "/services/cloud-consulting",
-  },
-  {
-    icon: <CreditCardIcon className="w-12 h-12 text-primary" />,
-    title: "Billing & CRM Solutions",
-    description:
-      "Enterprise billing and customer relationship management platforms.",
-    features: [
-      "Subscription management",
-      "Payment processing",
-      "Revenue assurance",
-      "Customer lifecycle management",
-    ],
-    link: "/products/nipige",
-  },
-  {
-    icon: <SparklesIcon className="w-12 h-12 text-primary" />,
-    title: "AI & Machine Learning",
-    description: "Transformative AI and ML solutions for your business.",
-    features: [
-      "Predictive analytics",
-      "Natural language processing",
-      "Data mining",
-      "Intelligent automation",
-    ],
-    link: "/services/ai-ml",
-  },
-  {
-    icon: <ChartBarIcon className="w-12 h-12 text-primary" />,
-    title: "Big Data Analytics",
-    description: "Extract actionable insights from complex datasets.",
-    features: [
-      "Data warehouse solutions",
-      "Business intelligence",
-      "Real-time analytics",
-      "Data visualization",
-    ],
-    link: "/services/big-data",
-  },
-  {
-    icon: <LinkIcon className="w-12 h-12 text-primary" />,
-    title: "Integration Services",
-    description: "Seamlessly connect your systems and streamline operations.",
-    features: [
-      "System integration",
-      "API management",
-      "Legacy modernization",
-      "Data synchronization",
-    ],
-    link: "/services/integration",
-  },
-];
 
 const features = [
   {
@@ -142,7 +61,7 @@ const features = [
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<
-    "Nipige" | "Solutions" | "Services"
+    "Nipige" | "Trinovo" | "Solutions" | "Services"
   >("Nipige");
 
   return (
@@ -162,26 +81,29 @@ export default function Home() {
               We are technology enablers and rapid digital enablement is our
               forte.
             </h1>
-            <p className="text-xl sm:text-2xl mb-6 opacity-90">
+            <p className="text-xl sm:text-2xl mb-4 opacity-90">
               We transform businesses and help grow on par with the present day
               techno landscapes with future ready empowerment.
             </p>
+            {/* <p className="text-lg opacity-85 max-w-3xl mx-auto">
+              Trigital offers the NIPIGE platform for rapid digital product development, Trinovo ERP for enterprise operations, and consulting services in cloud, AI/ML, migration, and integration. Partner with us for custom software, digital transformation, and scalable technology solutions.
+            </p> */}
           </div>
 
           {/* Three Cards */}
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {/* Card 1: Product - Other Our Service */}
+            {/* Card 1: Product - Trinovo */}
             <div className="group relative">
               <div className="text-center mb-4">
-                <h3 className="text-xl font-bold text-white">
-                  Product – Other Our Service
-                </h3>
+                <h2 className="text-xl font-bold text-white">
+                  Product – Trinovo
+                </h2>
               </div>
               <div className="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-2xl p-8 h-[400px] flex items-center justify-center shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl overflow-hidden">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src="/assets/images/Nipige/Product_NGB.svg"
-                    alt="Product - Other Our Service"
+                    alt="Product - Trinovo"
                     width={300}
                     height={300}
                     className="object-contain w-full h-full"
@@ -194,9 +116,9 @@ export default function Home() {
             {/* Card 2: Platform - NIPIGE */}
             <div className="group relative">
               <div className="text-center mb-4">
-                <h3 className="text-xl font-bold text-white">
+                <h2 className="text-xl font-bold text-white">
                   Platform – NIPIGE
-                </h3>
+                </h2>
               </div>
               <div className="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-2xl p-8 h-[400px] flex items-center justify-center shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl overflow-hidden">
                 <div className="relative w-full h-full flex items-center justify-center">
@@ -214,9 +136,9 @@ export default function Home() {
             {/* Card 3: Consulting Service */}
             <div className="group relative">
               <div className="text-center mb-4">
-                <h3 className="text-xl font-bold text-white">
+                <h2 className="text-xl font-bold text-white">
                   Consulting Service
-                </h3>
+                </h2>
               </div>
               <div className="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-2xl p-8 h-[400px] flex items-center justify-center shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl overflow-hidden">
                 <div className="relative w-full h-full flex items-center justify-center">
@@ -303,10 +225,40 @@ export default function Home() {
                 }
               `}
             >
-              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xs">N</span>
+              <div className="w-6 h-6 rounded-full flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/assets/images/Nipige/nipige-icon.png"
+                  alt="Nipige"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
               </div>
               <span>Nipige</span>
+            </button>
+
+            {/* Trinovo Tab */}
+            <button
+              onClick={() => setActiveTab("Trinovo")}
+              className={`
+                flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200 cursor-pointer
+                ${
+                  activeTab === "Trinovo"
+                    ? "bg-blue-100 text-blue-700 border-2 border-blue-300"
+                    : "bg-white text-gray-700 border-2 border-gray-200 hover:bg-gray-50"
+                }
+              `}
+            >
+              <div className="w-6 h-6 rounded-full flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/assets/images/Nipige/trinovo-icon.svg"
+                  alt="Trinovo"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+              <span>Trinovo</span>
             </button>
 
             {/* Solutions Tab */}
@@ -447,6 +399,95 @@ export default function Home() {
                     >
                       Nipige Deployment Model{" "}
                       <ArrowRightIcon className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Trinovo Content */}
+            {activeTab === "Trinovo" && (
+              <div>
+                <h3 className="text-2xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+                  Trinovo ERP Platform
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Platform Overview */}
+                  <div className="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <ComputerDesktopIcon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-bold text-center mb-3 text-gray-900">
+                      Platform Overview
+                    </h4>
+                    <p className="text-gray-700 text-center mb-4">
+                      A next-generation, modular ERP platform designed to help
+                      growing businesses and enterprises streamline operations,
+                      improve visibility, and scale with confidence...
+                    </p>
+                    <Link
+                      href="/products/trinovo"
+                      className="text-blue-600 font-medium flex items-center justify-center gap-1 hover:underline"
+                    >
+                      Explore Trinovo <ArrowRightIcon className="w-4 h-4" />
+                    </Link>
+                  </div>
+
+                  {/* Core Modules */}
+                  <div className="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <CubeIcon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-bold text-center mb-3 text-gray-900">
+                      Core Modules
+                    </h4>
+                    <p className="text-gray-700 text-center mb-4">
+                      Comprehensive suite of enterprise modules including
+                      Finance & Accounting, Procurement, Inventory, CRM, HRMS,
+                      and Asset Management that work independently or
+                      together...
+                    </p>
+                    <Link
+                      href="/products/trinovo/modules"
+                      className="text-blue-600 font-medium flex items-center justify-center gap-1 hover:underline"
+                    >
+                      Trinovo Core Modules{" "}
+                      <ArrowRightIcon className="w-4 h-4" />
+                    </Link>
+                  </div>
+
+                  {/* Technology Architecture */}
+                  <div className="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <CloudIcon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-bold text-center mb-3 text-gray-900">
+                      Technology Architecture
+                    </h4>
+                    <p className="text-gray-700 text-center mb-4">
+                      Built with cloud-first, API-driven architecture. Features
+                      microservices-based backend, secure integrations,
+                      multi-language support, and role-based access control...
+                    </p>
+                    <Link
+                      href="/products/trinovo/technology"
+                      className="text-blue-600 font-medium flex items-center justify-center gap-1 hover:underline"
+                    >
+                      Trinovo Technology <ArrowRightIcon className="w-4 h-4" />
+                    </Link>
+                  </div>
+
+                  {/* The Trinovo Advantage */}
+                  <div className="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow md:col-start-2">
+                    <BoltIcon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-bold text-center mb-3 text-gray-900">
+                      The Trinovo Advantage
+                    </h4>
+                    <p className="text-gray-700 text-center mb-4">
+                      Rapid implementation, modular scalability,
+                      enterprise-grade security, real-time visibility, lower
+                      TCO, and future-ready architecture for modern
+                      enterprises...
+                    </p>
+                    <Link
+                      href="/products/trinovo/advantages"
+                      className="text-blue-600 font-medium flex items-center justify-center gap-1 hover:underline"
+                    >
+                      Trinovo Advantages <ArrowRightIcon className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>

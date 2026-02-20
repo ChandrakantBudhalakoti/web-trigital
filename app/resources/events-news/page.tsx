@@ -4,11 +4,26 @@ import {
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
 
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "Events & News | Trigital Tech",
   description:
     "Upcoming events, workshops, and news from Trigital Technologies. Stay updated on digital transformation, cloud, and AI/ML insights.",
-};
+  keywords:
+    "Trigital events, technology events, workshops, technology news, digital transformation news, cloud computing events, AI ML events, industry news",
+  path: "/resources/events-news",
+});
+
+const schema = createWebPageSchema({
+  name: "Events & News | Trigital Tech",
+  description: "Upcoming events, workshops, and news from Trigital Technologies. Digital transformation, cloud, AI/ML insights.",
+  path: "/resources/events-news",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Resources", url: "/resources/blogs" }, { name: "Events & News", url: "/resources/events-news" }],
+});
 
 export default function EventsNews() {
   const events = [
@@ -53,6 +68,8 @@ export default function EventsNews() {
   ];
 
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen bg-[#0A1424] text-white">
       <Section>
         <div className="space-y-24 py-20">
@@ -170,5 +187,6 @@ export default function EventsNews() {
         </div>
       </Section>
     </main>
+    </>
   );
 }

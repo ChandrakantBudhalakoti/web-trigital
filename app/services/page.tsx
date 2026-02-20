@@ -2,6 +2,10 @@ import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { createWebPageSchema } from '@/lib/structured-data';
+import { SITE_URL } from '@/lib/seo';
+import { buildPageMetadata } from '@/lib/metadata';
 import {
   Cog6ToothIcon,
   CloudIcon,
@@ -11,11 +15,21 @@ import {
   LinkIcon,
 } from '@heroicons/react/24/outline';
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'Services | Trigital Tech',
   description:
-    'Explore our comprehensive range of software development and technology services.',
-};
+    'Explore our software development and technology services: cloud consulting, AI/ML, blockchain, integration, app development, big data analytics, migration.',
+  keywords:
+    'software development services, cloud consulting, AI ML consulting, blockchain services, integration services, app development, big data analytics, migration services, technology services, digital transformation services',
+  path: '/services',
+});
+
+const servicesSchema = createWebPageSchema({
+  name: 'Services | Trigital Tech',
+  description: 'Comprehensive software development and technology services. Cloud consulting, AI/ML, blockchain, integration, app development, big data analytics.',
+  path: '/services',
+  breadcrumbs: [{ name: 'Home', url: SITE_URL }, { name: 'Services', url: '/services' }],
+});
 
 const services = [
   {
@@ -107,6 +121,7 @@ const services = [
 export default function Services() {
   return (
     <>
+      <JsonLd data={servicesSchema} />
       <HeroSection
         title="Our Services"
         subtitle="Comprehensive technology solutions tailored to your business needs"
@@ -212,7 +227,7 @@ export default function Services() {
         <div className="text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Let's discuss how we can help you achieve your business objectives.
+            Let&apos;s discuss how we can help you achieve your business objectives.
           </p>
           <Link href="/contact-us" className="btn btn-light btn-lg">
             Schedule a Consultation

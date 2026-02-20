@@ -1,11 +1,27 @@
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { getServiceSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "Big Data Analytics | Trigital Tech",
   description:
-    "Extract actionable insights from complex datasets. Data warehouse solutions, business intelligence, real-time analytics, and data visualization services.",
-};
+    "Actionable insights from complex data. Data warehouse, business intelligence, real-time analytics, data visualization. Trigital data experts.",
+  keywords:
+    "big data analytics, data analytics, data warehouse, business intelligence, real-time analytics, data visualization, data processing, data science, data engineering, Hadoop, Spark",
+  path: "/services/big-data",
+});
+
+const schema = getServiceSchema({
+  name: "Big Data Analytics",
+  description: "Extract actionable insights from complex datasets. Data warehouse, BI, real-time analytics, data visualization.",
+  url: `${SITE_URL}/services/big-data`,
+});
 
 export default function BigData() {
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Big Data Analytics</h1>
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -33,6 +49,7 @@ export default function BigData() {
         </div>
       </div>
     </main>
+    </>
   );
 }
 

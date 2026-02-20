@@ -33,6 +33,15 @@ export default function Navbar() {
       ],
     },
     {
+      label: "Trinovo",
+      items: [
+        { href: "/products/trinovo", label: "Trinovo ERP Platform" },
+        { href: "/products/trinovo/modules", label: "Core Modules" },
+        { href: "/products/trinovo/technology", label: "Technology Architecture" },
+        { href: "/products/trinovo/advantages", label: "The Trinovo Advantage" },
+      ],
+    },
+    {
       label: "Solutions",
       items: [
         {
@@ -77,7 +86,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-slate-600 shadow-md">
-      <nav className="px-4 py-4 max-w-7xl mx-auto" aria-label="Main navigation">
+      <nav className="px-4 py-4 max-w-7xl mx-auto relative" aria-label="Main navigation">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
@@ -91,21 +100,21 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navSections.map((section) => (
+          <div className="hidden lg:flex items-center gap-1 ml-auto">
+            {navSections.map((section, index) => (
               <div key={section.label} className="relative group">
                 <button className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-base-200 rounded-md transition-colors flex items-center gap-1">
                   {section.label}
                   <ChevronDownIcon className="h-4 w-4" />
                 </button>
-                {/* Mega Menu */}
-                <div className="absolute left-0 top-full hidden group-hover:block bg-white dark:bg-slate-800 shadow-lg rounded-md mt-0 min-w-max border border-base-200">
+                {/* Mega Menu - Right aligned */}
+                <div className="absolute right-0 top-full hidden group-hover:block bg-white dark:bg-slate-800 shadow-lg rounded-md mt-0 min-w-max border border-base-200 z-50">
                   <div className="p-4 space-y-1">
                     {section.items.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-base-200 rounded-md transition-colors text-sm"
+                        className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-base-200 rounded-md transition-colors text-sm whitespace-nowrap text-left"
                       >
                         {item.label}
                       </Link>

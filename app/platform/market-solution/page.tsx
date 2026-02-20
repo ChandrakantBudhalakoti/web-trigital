@@ -1,11 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Market & Solution | Trigital Tech",
   description:
-    "NIPIGE solutions for hyperlocal markets, restaurant aggregators, farm-to-home, e-commerce, logistics, and more. Configurable low-code platform for rapid go-to-market.",
-};
+    "NIPIGE solutions: hyperlocal markets, restaurant aggregators, farm-to-home, e-commerce, logistics. Configurable low-code platform.",
+  keywords:
+    "market solutions, hyperlocal market, restaurant aggregator, food delivery solution, farm-to-home, e-commerce platform, logistics solution, digital commerce solutions, marketplace platform",
+  path: "/platform/market-solution",
+});
+
+const schema = createWebPageSchema({
+  name: "Market & Solution | Trigital Tech",
+  description: "NIPIGE solutions for hyperlocal markets, restaurant aggregators, farm-to-home, e-commerce, logistics.",
+  path: "/platform/market-solution",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Platform", url: "/platform/our-platform-nipige" }, { name: "Market & Solution", url: "/platform/market-solution" }],
+});
 
 export default function MarketSolution() {
   const solutions = [
@@ -90,6 +104,8 @@ export default function MarketSolution() {
   ];
 
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen">
       {/* —————————————————————————————————————————————————————————————
           1. HERO SECTION — Full-width dark blue/indigo, title + description left, SVG right
@@ -246,5 +262,6 @@ export default function MarketSolution() {
         </div>
       </section>
     </main>
+    </>
   );
 }

@@ -1,11 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata = buildPageMetadata({
   title: "Deployment Model | Trigital Tech",
   description:
-    "NIPIGE deployment options: SaaS, on-premise, and private cloud. Choose the infrastructure that fits your security, compliance, and scalability needs.",
-};
+    "NIPIGE deployment: SaaS, on-premise, private cloud. Infrastructure for your security, compliance, and scalability needs.",
+  keywords:
+    "deployment model, SaaS deployment, on-premise deployment, private cloud deployment, cloud infrastructure, deployment options, platform deployment",
+  path: "/platform/deployment-model",
+});
+
+const schema = createWebPageSchema({
+  name: "Deployment Model | Trigital Tech",
+  description: "NIPIGE deployment options: SaaS, on-premise, and private cloud. Choose infrastructure for security, compliance, and scalability.",
+  path: "/platform/deployment-model",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Platform", url: "/platform/our-platform-nipige" }, { name: "Deployment Model", url: "/platform/deployment-model" }],
+});
 
 export default function DeploymentModel() {
   const deployments = [
@@ -43,6 +58,8 @@ export default function DeploymentModel() {
   ];
 
   return (
+    <>
+      <JsonLd data={schema} />
     <main className="min-h-screen">
       {/* —————————————————————————————————————————————————————————————
           1. HERO SECTION — Full-width dark blue/indigo, title + description left, image right
@@ -192,5 +209,6 @@ export default function DeploymentModel() {
         </div>
       </section>
     </main>
+    </>
   );
 }

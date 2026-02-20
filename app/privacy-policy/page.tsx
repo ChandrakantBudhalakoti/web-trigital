@@ -1,15 +1,31 @@
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
+import JsonLd from "@/components/JsonLd";
+import { createWebPageSchema, getFAQPageSchema } from "@/lib/structured-data";
+import { PAGE_FAQS } from "@/lib/page-faqs";
+import { SITE_URL } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy Policy | Trigital Tech",
   description:
-    "Read Trigital Technologies Privacy Policy to understand how we collect, use, and protect your personal information.",
-};
+    "Trigital Technologies Privacy Policy: how we collect, use, and protect your personal information. Data protection and GDPR compliance.",
+  keywords:
+    "privacy policy, data protection, privacy, GDPR compliance, data privacy, personal information protection, privacy statement",
+  path: "/privacy-policy",
+});
+
+const privacySchema = createWebPageSchema({
+  name: "Privacy Policy | Trigital Tech",
+  description: "Trigital Technologies Privacy Policy: how we collect, use, and protect your personal information. Data protection and GDPR compliance.",
+  path: "/privacy-policy",
+  breadcrumbs: [{ name: "Home", url: SITE_URL }, { name: "Privacy Policy", url: "/privacy-policy" }],
+});
 
 export default function PrivacyPolicy() {
   return (
     <>
+      <JsonLd data={[privacySchema, getFAQPageSchema(PAGE_FAQS["/privacy-policy"])]} />
       <HeroSection
         title="Privacy Policy"
         subtitle="Your privacy matters to us. Learn how we protect and handle your data."
@@ -18,6 +34,9 @@ export default function PrivacyPolicy() {
 
       <Section id="privacy-content" className="bg-white dark:bg-slate-800">
         <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert">
+          <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            This Privacy Policy outlines how Trigital Technologies collects, uses, stores, and protects your personal data when you use our website, NIPIGE platform, and related services. We are committed to transparency and compliance with applicable data protection regulations including GDPR.
+          </p>
           <p className="text-gray-700 dark:text-gray-300 mb-6">
             <strong>Last Updated:</strong>{" "}
             {new Date().toLocaleDateString("en-US", {
