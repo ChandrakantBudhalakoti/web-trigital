@@ -1,6 +1,6 @@
 /** Canonical base URL for the site. Use https and single host (www or non-www). */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.trigital.in";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://netlifytrigital.netlify.app";
 
 export function canonicalUrl(pathname: string): string {
   const path = pathname === "/" ? "" : pathname;

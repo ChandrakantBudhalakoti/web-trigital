@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { blogService } from "@/app/lib/api/blog-service";
 import { customers } from "@/lib/customers-data";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.trigital.in";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://netlifytrigital.netlify.app";
 
 /** Indexable static routes only. Excludes: thank-you, utility-only, filter/search, duplicate paths. */
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" }[] = [

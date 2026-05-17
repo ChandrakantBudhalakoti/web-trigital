@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.trigital.in";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://netlifytrigital.netlify.app";
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 export function proxy(request: NextRequest) {

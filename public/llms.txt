@@ -6,71 +6,71 @@ Trigital Technologies is a leading SaaS-based software development company provi
 ## Website Structure
 
 ### Main Pages
-- Home: https://www.trigital.in/
-- Contact Us: https://www.trigital.in/contact-us
-- FAQs: https://www.trigital.in/faqs
-- Privacy Policy: https://www.trigital.in/privacy-policy
-- Terms of Service: https://www.trigital.in/terms-of-service
-- Sitemap: https://www.trigital.in/sitemap.xml
-- Human sitemap: https://www.trigital.in/site-map
+- Home: https://netlifytrigital.netlify.app/
+- Contact Us: https://netlifytrigital.netlify.app/contact-us
+- FAQs: https://netlifytrigital.netlify.app/faqs
+- Privacy Policy: https://netlifytrigital.netlify.app/privacy-policy
+- Terms of Service: https://netlifytrigital.netlify.app/terms-of-service
+- Sitemap: https://netlifytrigital.netlify.app/sitemap.xml
+- Human sitemap: https://netlifytrigital.netlify.app/site-map
 
 ### Company
-- About Us: https://www.trigital.in/company/about-us
-- Customers: https://www.trigital.in/company/customers
-- Our Team: https://www.trigital.in/company/our-team
-- Partners: https://www.trigital.in/company/partners
-- NXTDIGITAL Limited: https://www.trigital.in/company/customers/nxtdigital-limited
-- Telkom South Africa: https://www.trigital.in/company/customers/telkom-south-africa
-- Tayana Mobility Technologies: https://www.trigital.in/company/customers/tayana-mobility-technologies
-- 5Factors: https://www.trigital.in/company/customers/5factors
-- AZA: https://www.trigital.in/company/customers/aza
-- LIRS: https://www.trigital.in/company/customers/lirs
-- TEKA: https://www.trigital.in/company/customers/teka
-- CALONEX: https://www.trigital.in/company/customers/calonex
-- POLIMERAAS: https://www.trigital.in/company/customers/polimeraas
-- FREE TV: https://www.trigital.in/company/customers/free-tv
-- Fastway Group: https://www.trigital.in/company/customers/fastway-group
-- AP State FiberNet Limited: https://www.trigital.in/company/customers/ap-state-fibernet-limited
+- About Us: https://netlifytrigital.netlify.app/company/about-us
+- Customers: https://netlifytrigital.netlify.app/company/customers
+- Our Team: https://netlifytrigital.netlify.app/company/our-team
+- Partners: https://netlifytrigital.netlify.app/company/partners
+- NXTDIGITAL Limited: https://netlifytrigital.netlify.app/company/customers/nxtdigital-limited
+- Telkom South Africa: https://netlifytrigital.netlify.app/company/customers/telkom-south-africa
+- Tayana Mobility Technologies: https://netlifytrigital.netlify.app/company/customers/tayana-mobility-technologies
+- 5Factors: https://netlifytrigital.netlify.app/company/customers/5factors
+- AZA: https://netlifytrigital.netlify.app/company/customers/aza
+- LIRS: https://netlifytrigital.netlify.app/company/customers/lirs
+- TEKA: https://netlifytrigital.netlify.app/company/customers/teka
+- CALONEX: https://netlifytrigital.netlify.app/company/customers/calonex
+- POLIMERAAS: https://netlifytrigital.netlify.app/company/customers/polimeraas
+- FREE TV: https://netlifytrigital.netlify.app/company/customers/free-tv
+- Fastway Group: https://netlifytrigital.netlify.app/company/customers/fastway-group
+- AP State FiberNet Limited: https://netlifytrigital.netlify.app/company/customers/ap-state-fibernet-limited
 
 ### Services
-- All Services: https://www.trigital.in/services
-- Custom Software Development: https://www.trigital.in/services/custom-development
-- Cloud Consultancy: https://www.trigital.in/services/cloud-consultancy
-- Cloud Consulting: https://www.trigital.in/services/cloud-consulting
-- AI/ML Services: https://www.trigital.in/services/ai-ml
-- AI/ML Consulting: https://www.trigital.in/services/ai-ml-consulting
-- Big Data Analytics: https://www.trigital.in/services/big-data-analytics
-- Big Data: https://www.trigital.in/services/big-data
-- Blockchain: https://www.trigital.in/services/blockchain
-- App Development: https://www.trigital.in/services/app-development
-- Integration: https://www.trigital.in/services/integration
-- Migration Services: https://www.trigital.in/services/migration-services
+- All Services: https://netlifytrigital.netlify.app/services
+- Custom Software Development: https://netlifytrigital.netlify.app/services/custom-development
+- Cloud Consultancy: https://netlifytrigital.netlify.app/services/cloud-consultancy
+- Cloud Consulting: https://netlifytrigital.netlify.app/services/cloud-consulting
+- AI/ML Services: https://netlifytrigital.netlify.app/services/ai-ml
+- AI/ML Consulting: https://netlifytrigital.netlify.app/services/ai-ml-consulting
+- Big Data Analytics: https://netlifytrigital.netlify.app/services/big-data-analytics
+- Big Data: https://netlifytrigital.netlify.app/services/big-data
+- Blockchain: https://netlifytrigital.netlify.app/services/blockchain
+- App Development: https://netlifytrigital.netlify.app/services/app-development
+- Integration: https://netlifytrigital.netlify.app/services/integration
+- Migration Services: https://netlifytrigital.netlify.app/services/migration-services
 
 ### Products
-- NIPIGE: https://www.trigital.in/products/nipige
-- Trinovo: https://www.trigital.in/products/trinovo
-- Trinovo Advantages: https://www.trigital.in/products/trinovo/advantages
-- Trinovo Technology: https://www.trigital.in/products/trinovo/technology
-- Trinovo Modules: https://www.trigital.in/products/trinovo/modules
+- NIPIGE: https://netlifytrigital.netlify.app/products/nipige
+- Trinovo: https://netlifytrigital.netlify.app/products/trinovo
+- Trinovo Advantages: https://netlifytrigital.netlify.app/products/trinovo/advantages
+- Trinovo Technology: https://netlifytrigital.netlify.app/products/trinovo/technology
+- Trinovo Modules: https://netlifytrigital.netlify.app/products/trinovo/modules
 
 ### Platform (NIPIGE)
-- Our Platform NIPIGE: https://www.trigital.in/platform/our-platform-nipige
-- How It Works: https://www.trigital.in/platform/how-it-works
-- Key Features: https://www.trigital.in/platform/key-features
-- Market Solution: https://www.trigital.in/platform/market-solution
-- Deployment Model: https://www.trigital.in/platform/deployment-model
+- Our Platform NIPIGE: https://netlifytrigital.netlify.app/platform/our-platform-nipige
+- How It Works: https://netlifytrigital.netlify.app/platform/how-it-works
+- Key Features: https://netlifytrigital.netlify.app/platform/key-features
+- Market Solution: https://netlifytrigital.netlify.app/platform/market-solution
+- Deployment Model: https://netlifytrigital.netlify.app/platform/deployment-model
 
 ### Solutions
-- Digital Commerce: https://www.trigital.in/solutions/digital-commerce
-- Digital Engagement: https://www.trigital.in/solutions/digital-engagement
-- Digital Service: https://www.trigital.in/solutions/digital-service
-- Subscription Monetization: https://www.trigital.in/solutions/subscription-monetization
+- Digital Commerce: https://netlifytrigital.netlify.app/solutions/digital-commerce
+- Digital Engagement: https://netlifytrigital.netlify.app/solutions/digital-engagement
+- Digital Service: https://netlifytrigital.netlify.app/solutions/digital-service
+- Subscription Monetization: https://netlifytrigital.netlify.app/solutions/subscription-monetization
 
 ### Resources
-- Blogs: https://www.trigital.in/resources/blogs
-- Documentation: https://www.trigital.in/resources/documentation
-- Events & News: https://www.trigital.in/resources/events-news
-- Blog posts: https://www.trigital.in/resources/blogs/[slug] (dynamic; see sitemap.xml for current list)
+- Blogs: https://netlifytrigital.netlify.app/resources/blogs
+- Documentation: https://netlifytrigital.netlify.app/resources/documentation
+- Events & News: https://netlifytrigital.netlify.app/resources/events-news
+- Blog posts: https://netlifytrigital.netlify.app/resources/blogs/[slug] (dynamic; see sitemap.xml for current list)
 
 ## Contact Information
 - Email: info@trigital.in

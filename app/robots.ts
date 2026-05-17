@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.trigital.in";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://netlifytrigital.netlify.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
